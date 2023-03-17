@@ -1,0 +1,63 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50rem;
+        height: 50rem;
+        border-radius: 50%;
+      }
+
+      &__button {
+        position: absolute;
+        right: -20%;
+        top: 43%;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+
+        font-size: 3rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &__icon {
+          fill: black;
+          height: 3rem;
+          width: 3rem;
+        }
+      }
+    }
+
+    &__content {
+      margin-top: 3rem;
+      width: inherit;
+      text-align: center;
+
+      &__title {
+        font-size: 3rem;
+        font-weight: 500;
+        font-family: "Noto Serif";
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
