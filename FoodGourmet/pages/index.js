@@ -15,16 +15,15 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(props) {
-    const res = await fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`);
+    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
     const data = await res.json();
-    const recipes = data.recipes;
 
     return {
         props: {
-            recipes: recipes.map(recipe => ({
-                id: recipe.id,
-                title: recipe.title,
-                image: recipe.image,
+            recipes: data.meals.map(meal => ({
+                id: meal.idMeal,
+                title: meal.strMeal,
+                image: meal.strMealThumb,
             }))
         },
         revalidate: 30

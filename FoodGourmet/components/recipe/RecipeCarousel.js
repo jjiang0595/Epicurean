@@ -4,19 +4,24 @@ import {useState} from "react";
 export default function RecipeCarousel(props) {
     const [recipe, setRecipe] = useState({title: props.recipes.title, image: props.recipes.image});
     const [active, setActive] = useState(false);
-
+    console.log(props);
     function capitalizeString(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
+        const title = string.split(" ");
+        for (let i = 0; i < title.length; i++) {
+            title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
+
+        }
+        return title.join(" ");
     }
 
     const nextRecipe = () => {
         setTimeout(async () => {
-            await fetch(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}`)
+            await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
                 .then(res => res.json())
                 .then(data => {
                     setActive(false)
-                    const recipe = data.recipes[0];
-                    setRecipe({title: recipe.title, image: recipe.image})
+                    const recipe = data.meals[0];
+                    setRecipe({title: recipe.strMeal, image: recipe.strMealThumb})
                 })
                 .catch(err => console.log(err))
         }, 500)
