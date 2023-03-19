@@ -1,13 +1,13 @@
 import styles from './RecipeCarousel.module.scss';
 
-export default function RecipeCarousel() {
+export default function RecipeCarousel(props) {
     return (
         <div className={styles.carousel}>
             <div className={styles.carousel__container}>
                 <div className={styles.carousel__container__item}>
                     <img
                         className={styles.carousel__container__item__image}
-                        src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        src={props.recipes.image}
                         alt=""/>
                     <button className={styles.carousel__container__item__button}>
                         <svg className={styles.carousel__container__item__button__icon}>
@@ -16,7 +16,7 @@ export default function RecipeCarousel() {
                     </button>
                 </div>
                 <div className={styles.carousel__container__content}>
-                    <h3 className={styles.carousel__container__content__title}>Recipe 1</h3>
+                    <h3 className={styles.carousel__container__content__title}>{props.recipes.title}</h3>
                 </div>
             </div>
         </div>
