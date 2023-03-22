@@ -1,10 +1,11 @@
 import styles from './RecipeCarousel.module.scss';
 import {useState} from "react";
+import RecipeInstructions from "./RecipeInstructions";
 
 export default function RecipeCarousel(props) {
-    const [recipe, setRecipe] = useState({title: props.recipes.title, image: props.recipes.image});
+    const [recipe, setRecipe] = useState({title: capitalizeString(props.recipes.title), image: props.recipes.image, instr: props.recipes.instr});
     const [active, setActive] = useState(false);
-    console.log(props);
+
     function capitalizeString(string) {
         const title = string.split(" ");
         for (let i = 0; i < title.length; i++) {
@@ -21,7 +22,7 @@ export default function RecipeCarousel(props) {
                 .then(data => {
                     setActive(false)
                     const recipe = data.meals[0];
-                    setRecipe({title: recipe.strMeal, image: recipe.strMealThumb})
+                    setRecipe({title: capitalizeString(recipe.strMeal), image: recipe.strMealThumb, instr: recipe.strInstructions})
                 })
                 .catch(err => console.log(err))
         }, 500)
@@ -36,9 +37,15 @@ export default function RecipeCarousel(props) {
                         className={styles.carousel__container__item__image}
                         src={recipe.image}
                         alt=""/>
-                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__button}
+                    {/*<RecipeInstructions instr={recipe.instr} title={recipe.title}/>*/}
+                    <button type="button" className={styles.carousel__container__item__infoButton}>
+                        <svg className={styles.carousel__container__item__infoButton__icon}>
+                            <use href="/sprite.svg#icon-spoon-knife"></use>
+                        </svg>
+                    </button>
+                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton}
                             disabled={active}>
-                        <svg className={styles.carousel__container__item__button__icon}>
+                        <svg className={styles.carousel__container__item__nextButton__icon}>
                             <use href="/sprite.svg#icon-chevron-right"></use>
                         </svg>
                     </button>

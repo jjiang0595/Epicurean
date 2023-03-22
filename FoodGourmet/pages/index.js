@@ -24,6 +24,7 @@ export async function getStaticProps(props) {
                 id: meal.idMeal,
                 title: meal.strMeal,
                 image: meal.strMealThumb,
+                instr: meal.strInstructions
             }))
         },
         revalidate: 30

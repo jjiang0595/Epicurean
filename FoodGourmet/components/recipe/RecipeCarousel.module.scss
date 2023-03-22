@@ -5,30 +5,52 @@
   align-items: center;
   height: inherit;
   padding-top: 8rem;
+  background-color: rgb(233, 233, 233);
 
   &__container {
     display: flex;
     flex-direction: column;
-    width: 100rem;
-    align-items: center;
-    justify-content: center;
 
     &__item {
-      display: flex;
-      flex-direction: row;
       position: relative;
+      display: inline-block;
 
       &__image {
+        display: block;
         object-fit: scale-down;
         border-radius: 1rem;
       }
 
-      &__button {
+      &__infoButton {
+        position: absolute;
+        right: 0%;
+        top: 0%;
+        width: 7rem;
+        height: 7rem;
+        border-radius: 2rem;
+
+
+        font-size: 3rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        &__icon {
+          fill: black;
+          height: 4rem;
+          width: 4rem;
+        }
+      }
+
+      &__nextButton {
         position: absolute;
         right: -20%;
         top: 43%;
-        width: 6rem;
-        height: 6rem;
+        width: 8rem;
+        height: 8rem;
         border-radius: 50%;
 
         font-size: 3rem;
@@ -41,10 +63,11 @@
 
         &__icon {
           fill: black;
-          height: 3rem;
-          width: 3rem;
+          height: 4rem;
+          width: 4rem;
         }
       }
+
     }
 
     &__content {
