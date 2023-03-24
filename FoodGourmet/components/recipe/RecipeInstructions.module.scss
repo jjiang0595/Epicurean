@@ -6,6 +6,8 @@
   padding-right: 1.5rem;
   height: 70rem;
   border-radius: 1rem;
+  transition-duration: .5s;
+  transition-property: transform, opacity;
 
 
   background: rgba(133, 133, 133, 0.8);

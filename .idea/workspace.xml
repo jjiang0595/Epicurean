@@ -8,10 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/ui/MainNavigation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/ui/MainNavigation.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/public/sprite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/public/sprite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/styles/globals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +56,7 @@
       <workItem from="1679149015808" duration="12672000" />
       <workItem from="1679245999281" duration="9711000" />
       <workItem from="1679315773433" duration="10397000" />
+      <workItem from="1679611186078" duration="6678000" />
     </task>
     <servers />
   </component>

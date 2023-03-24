@@ -5,6 +5,7 @@ import RecipeInstructions from "./RecipeInstructions";
 export default function RecipeCarousel(props) {
     const [recipe, setRecipe] = useState({title: capitalizeString(props.recipes.title), image: props.recipes.image, instr: props.recipes.instr});
     const [active, setActive] = useState(false);
+    const [showRecipe, hideRecipe] = useState(false);
 
     function capitalizeString(string) {
         const title = string.split(" ");
@@ -23,10 +24,17 @@ export default function RecipeCarousel(props) {
                     setActive(false)
                     const recipe = data.meals[0];
                     setRecipe({title: capitalizeString(recipe.strMeal), image: recipe.strMealThumb, instr: recipe.strInstructions})
+                    hideRecipe(true);
                 })
                 .catch(err => console.log(err))
         }, 500)
-        setActive(true)
+        setActive(true);
+
+
+    }
+
+    const toggleRecipeVisibility = () => {
+        hideRecipe(!showRecipe);
     }
 
     return (
@@ -37,8 +45,8 @@ export default function RecipeCarousel(props) {
                         className={styles.carousel__container__item__image}
                         src={recipe.image}
                         alt=""/>
-                    {/*<RecipeInstructions instr={recipe.instr} title={recipe.title}/>*/}
-                    <button type="button" className={styles.carousel__container__item__infoButton}>
+                    {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title} />}
+                    <button type="button" onClick={toggleRecipeVisibility} className={styles.carousel__container__item__infoButton}>
                         <svg className={styles.carousel__container__item__infoButton__icon}>
                             <use href="/sprite.svg#icon-spoon-knife"></use>
                         </svg>
