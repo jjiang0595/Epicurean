@@ -13,8 +13,11 @@
 
     &__item {
       position: relative;
+      max-width: 70rem;
 
       &__image {
+        max-height: 70rem;
+        max-width: 70rem;
         display: block;
         object-fit: scale-down;
         border-radius: 1rem 0 1rem 1rem;
@@ -92,6 +95,7 @@
     &__content {
       margin-top: 3rem;
       text-align: center;
+      max-width: 80rem;
 
       &__title {
         font-size: 3rem;

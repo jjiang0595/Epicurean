@@ -58,15 +58,22 @@ export default function RecipeCarousel(props) {
                         src={recipe.image}
                         alt=""
                     />
-                    <div className={styles.carousel__container__item__instructions} style={{ opacity: !showRecipe ? '1' : '0', visibility: !showRecipe ? 'visible' : 'hidden', transition: 'opacity 0.25s ease-in-out, visibility 0.25s ease-in-out' }}>
-                        {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title}/>}
-                    </div>
-                    <button type="button" onClick={toggleRecipeVisibility} className={styles.carousel__container__item__infoButton}>
+                    <button type="button" onClick={toggleRecipeVisibility}
+                            className={styles.carousel__container__item__infoButton}>
                         <svg className={styles.carousel__container__item__infoButton__icon}>
                             <use href="/sprite.svg#icon-spoon-knife"></use>
                         </svg>
                     </button>
-                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton} disabled={active}>
+                    <div className={styles.carousel__container__item__instructions} style={{
+                        opacity: !showRecipe ? '1' : '0',
+                        visibility: !showRecipe ? 'visible' : 'hidden',
+                        transition: 'opacity 0.25s ease-in-out, visibility 0.25s ease-in-out'
+                    }}>
+                        {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title}/>}
+                    </div>
+
+                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton}
+                            disabled={active}>
                         <svg className={styles.carousel__container__item__nextButton__icon}>
                             <use href="/sprite.svg#icon-chevron-right"></use>
                         </svg>
