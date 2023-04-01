@@ -1,21 +1,14 @@
 .instructions {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.75;
-  width: 70rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  height: 70rem;
-  border-radius: 1rem;
-  transition-duration: .5s;
-  transition-property: transform, opacity;
-
-
   background: rgba(133, 133, 133, 0.8);
-  display: inline;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: inherit;
+  width: inherit;
+  padding-left: inherit;
+  padding-right: inherit;
+  padding-top: 1.5rem;
+  border-radius: inherit;
+  position: relative;
+
+  right: 2.25%;
 
   &__title {
     font-size: 3.5rem;

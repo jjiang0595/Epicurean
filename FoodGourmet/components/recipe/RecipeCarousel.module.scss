@@ -13,21 +13,38 @@
 
     &__item {
       position: relative;
-      display: inline-block;
 
       &__image {
         display: block;
         object-fit: scale-down;
         border-radius: 1rem;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      &__instructions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.75;
+        width: 70rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        height: 70rem;
+        border-radius: 1rem;
+        transition: all 5s ease-in-out;
+
+        transform: translate(-50%, -50%);
       }
 
       &__infoButton {
         position: absolute;
-        right: 0%;
-        top: 0%;
+        right: 0;
+        top: 0;
         width: 7rem;
         height: 7rem;
         border-bottom-left-radius: 2rem;
+        border-top-right-radius: 1rem;
         background-color: rgba(133, 133, 133, 0.8);
         border: none;
         opacity: 0.65;

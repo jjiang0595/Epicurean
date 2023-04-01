@@ -3,7 +3,11 @@ import {useState} from "react";
 import RecipeInstructions from "./RecipeInstructions";
 
 export default function RecipeCarousel(props) {
-    const [recipe, setRecipe] = useState({title: capitalizeString(props.recipes.title), image: props.recipes.image, instr: props.recipes.instr});
+    const [recipe, setRecipe] = useState({
+        title: capitalizeString(props.recipes.title),
+        image: props.recipes.image,
+        instr: props.recipes.instr
+    });
     const [active, setActive] = useState(false);
     const [showRecipe, hideRecipe] = useState(false);
 
@@ -11,9 +15,15 @@ export default function RecipeCarousel(props) {
         const title = string.split(" ");
         for (let i = 0; i < title.length; i++) {
             title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
-
         }
         return title.join(" ");
+    }
+
+    function lowercaseString(string) {
+        const title = string.split(" ");
+        for (let i = 0; i < title.length; i++) {
+            title[i] = title[i].charAt(0).toLowerCase() + title[i].slice(1);
+        }
     }
 
     const nextRecipe = () => {
@@ -21,16 +31,18 @@ export default function RecipeCarousel(props) {
             await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
                 .then(res => res.json())
                 .then(data => {
-                    setActive(false)
+                    setActive(false);
                     const recipe = data.meals[0];
-                    setRecipe({title: capitalizeString(recipe.strMeal), image: recipe.strMealThumb, instr: recipe.strInstructions})
+                    setRecipe({
+                        title: capitalizeString(recipe.strMeal),
+                        image: recipe.strMealThumb,
+                        instr: recipe.strInstructions
+                    })
                     hideRecipe(true);
                 })
                 .catch(err => console.log(err))
         }, 500)
         setActive(true);
-
-
     }
 
     const toggleRecipeVisibility = () => {
@@ -42,17 +54,19 @@ export default function RecipeCarousel(props) {
             <div className={styles.carousel__container}>
                 <div className={styles.carousel__container__item}>
                     <img
-                        className={styles.carousel__container__item__image}
+                        className={`${styles.carousel__container__item__image}`}
                         src={recipe.image}
-                        alt=""/>
-                    {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title} />}
+                        alt=""
+                    />
+                    <div className={styles.carousel__container__item__instructions} style={{ opacity: !showRecipe ? '1' : '0', visibility: !showRecipe ? 'visible' : 'hidden', transition: 'opacity 0.25s ease-in-out, visibility 0.25s ease-in-out' }}>
+                        {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title}/>}
+                    </div>
                     <button type="button" onClick={toggleRecipeVisibility} className={styles.carousel__container__item__infoButton}>
                         <svg className={styles.carousel__container__item__infoButton__icon}>
                             <use href="/sprite.svg#icon-spoon-knife"></use>
                         </svg>
                     </button>
-                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton}
-                            disabled={active}>
+                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton} disabled={active}>
                         <svg className={styles.carousel__container__item__nextButton__icon}>
                             <use href="/sprite.svg#icon-chevron-right"></use>
                         </svg>
