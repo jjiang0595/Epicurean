@@ -9,7 +9,7 @@ export default function RecipeCarousel(props) {
         instr: props.recipes.instr
     });
     const [active, setActive] = useState(false);
-    const [showRecipe, hideRecipe] = useState(false);
+    const [showRecipe, hideRecipe] = useState(true);
 
     function capitalizeString(string) {
         const title = string.split(" ");
