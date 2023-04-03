@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/public/black.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,21 +23,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/jerry/WebstormProjects/FoodGourmet/FoodGourmet/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerry/WebstormProjects/FoodGourmet/FoodGourmet/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\FoodGourmet\public" />
@@ -66,7 +63,9 @@
       <workItem from="1679792875754" duration="647000" />
       <workItem from="1680315584158" duration="593000" />
       <workItem from="1680371919133" duration="97000" />
-      <workItem from="1680372067783" duration="16437000" />
+      <workItem from="1680372067783" duration="20562000" />
+      <workItem from="1680457340822" duration="18797000" />
+      <workItem from="1680494726003" duration="5000" />
     </task>
     <servers />
   </component>

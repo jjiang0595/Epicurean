@@ -19,13 +19,6 @@ export default function RecipeCarousel(props) {
         return title.join(" ");
     }
 
-    function lowercaseString(string) {
-        const title = string.split(" ");
-        for (let i = 0; i < title.length; i++) {
-            title[i] = title[i].charAt(0).toLowerCase() + title[i].slice(1);
-        }
-    }
-
     const nextRecipe = () => {
         setTimeout(async () => {
             await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -78,9 +71,6 @@ export default function RecipeCarousel(props) {
                             <use href="/sprite.svg#icon-chevron-right"></use>
                         </svg>
                     </button>
-                </div>
-                <div className={styles.carousel__container__content}>
-                    <h3 className={styles.carousel__container__content__title}>{capitalizeString(recipe.title)}</h3>
                 </div>
             </div>
         </div>
