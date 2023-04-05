@@ -63,7 +63,6 @@ const Searchbar = (props) => {
     }
 
     const handleAnimationEnd = () => {
-        console.log("BOOM")
         setIsRotated(true);
     };
 
@@ -83,16 +82,16 @@ const Searchbar = (props) => {
                     <div className={styles.search__results}>
                         {showResults && searchResults.map((recipe) => (
                             <Link href={{
-                                pathname: `/movies/${recipe.key}`,
+                                pathname: `/recipes/${recipe.key}`,
                                 query: {
-                                    movieId: recipe.movieId,
-                                    title: `${recipe.title}`,
-                                    image: `http://image.tmdb.org/t/p/w500/${recipe.image}`,
-                                    description: recipe.description
+                                    recipeKey: recipe.idMeal,
+                                    title: recipe.strMeal,
+                                    image: recipe.strMealThumb,
+                                    instr: recipe.strInstructions
                                 }
-                            }} as={`/movies/${movie.movieId}`} className={styles.search__results__item}
+                            }} as={`/recipes/${recipe.recipeKey}`} className={styles.search__results__item}
                                   onClick={deleteSearchTerm}>
-                                <span className={styles.search__results__item__title}>{movie.title}</span>
+                                <span className={styles.search__results__item__title}>{recipe.title}</span>
                             </Link>
                         ))}
                         {searchResults.length === 0 && showResults &&

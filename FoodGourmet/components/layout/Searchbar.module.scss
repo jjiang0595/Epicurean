@@ -1,10 +1,10 @@
 // SEARCH
 .search {
-  flex: 0 0 40%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   border-radius: 100%;
+  width: 60rem;
   position: relative;
 
   @media only screen and (max-width: 1100px) {
@@ -19,21 +19,20 @@
   }
 
   &__input {
-    animation: flow 5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation: flow 2.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-    background-color: black;
+    background-color: #C7AFCD;
     font-family: inherit;
     font-size: inherit;
-    color: inherit;
-    border: none;
+    border: .3rem solid #E5C6C3;
     padding: 1rem 2rem;
-    border-radius: 100px;
+    border-radius: 2rem;
     width: 100%;
     margin-right: -3.25rem;
 
     &::-webkit-input-placeholder {
       font-weight: 100;
-      color: #999;
+      color: whitesmoke;
     }
 
     &__bottom {
@@ -53,7 +52,6 @@
     width: 3rem;
     fill: black;
     transition: all 1s ease;
-    z-index: 100;
   }
 
 
