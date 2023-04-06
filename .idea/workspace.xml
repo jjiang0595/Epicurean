@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeCarousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeCarousel.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeInstructions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeInstructions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeInstructions.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/recipes/[recipeId]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/pages/recipes/[recipeId]/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/search/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/FoodGourmet/pages/search/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,25 +34,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/jerry/WebstormProjects/FoodGourmet/FoodGourmet/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerry/WebstormProjects/FoodGourmet/FoodGourmet/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\FoodGourmet\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\FoodGourmet\components\recipe\search" />
+      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\FoodGourmet\components\recipe\Carousel" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -69,7 +82,8 @@
       <workItem from="1680372067783" duration="20562000" />
       <workItem from="1680457340822" duration="18797000" />
       <workItem from="1680494726003" duration="5000" />
-      <workItem from="1680660027025" duration="4738000" />
+      <workItem from="1680660027025" duration="5844000" />
+      <workItem from="1680721801508" duration="18201000" />
     </task>
     <servers />
   </component>

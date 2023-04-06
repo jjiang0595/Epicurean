@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import RecipeCarousel from "../components/recipe/RecipeCarousel";
+import RecipeCarousel from "../components/recipe/carousel/RecipeCarousel";
 
 export default function Home(props) {
     return (

@@ -1,6 +1,7 @@
 import styles from './RecipeCarousel.module.scss';
 import {useState} from "react";
 import RecipeInstructions from "./RecipeInstructions";
+import {capitalizeString} from "../../../utils/capitalizeString";
 
 export default function RecipeCarousel(props) {
     const [recipe, setRecipe] = useState({
@@ -10,14 +11,6 @@ export default function RecipeCarousel(props) {
     });
     const [active, setActive] = useState(false);
     const [showRecipe, hideRecipe] = useState(true);
-
-    function capitalizeString(string) {
-        const title = string.split(" ");
-        for (let i = 0; i < title.length; i++) {
-            title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
-        }
-        return title.join(" ");
-    }
 
     const nextRecipe = () => {
         setTimeout(async () => {

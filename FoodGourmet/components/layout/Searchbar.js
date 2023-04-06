@@ -1,5 +1,5 @@
 import styles from './Searchbar.module.scss';
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/router";
 
@@ -54,7 +54,6 @@ const Searchbar = (props) => {
                 search: `?query=${query.current.value}`,
                 query: {
                     query: query.current.value,
-                    title: 'Search Results'
                 }
             })
         } else {
@@ -99,7 +98,7 @@ const Searchbar = (props) => {
                     </div>
                 </>
             }
-            {showResults ? <div className={styles.overlay} onClick={deleteSearchTerm}/> : null}
+            {showResults ? <div className={styles.overlay} onClick={() => setShowResults(false)}/> : null}
         </form>
     )
 }

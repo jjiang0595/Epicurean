@@ -2,9 +2,8 @@
 .search {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   border-radius: 100%;
-  width: 60rem;
   position: relative;
 
   @media only screen and (max-width: 1100px) {
@@ -21,18 +20,24 @@
   &__input {
     animation: flow 2.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-    background-color: #C7AFCD;
+    background-color: #F5EBEB;
     font-family: inherit;
     font-size: inherit;
-    border: .3rem solid #E5C6C3;
+    border: .2rem solid #E5C6C3;
     padding: 1rem 2rem;
     border-radius: 2rem;
-    width: 100%;
+    width: 75rem;
     margin-right: -3.25rem;
+
+
+    &:focus {
+      outline: none;
+    }
 
     &::-webkit-input-placeholder {
       font-weight: 100;
-      color: whitesmoke;
+      color: black;
+      opacity: .75;
     }
 
     &__bottom {
@@ -51,7 +56,7 @@
     height: 3rem;
     width: 3rem;
     fill: black;
-    transition: all 1s ease;
+    transition: all .5s ease;
   }
 
 
@@ -63,6 +68,7 @@
     background-color: #f4f2f2;
     overflow: hidden;
     transition: all .2s ease;
+    z-index: 10;
 
     @media only screen and (max-width: 966px) {
       top: 60%;
@@ -96,19 +102,19 @@
 
 @keyframes flow {
   0% {
-    flex: 0 0 0;
+    width: 0;
   }
   100% {
-    flex: 0 0 100%;
+    width: 75rem;
   }
 }
 
 .overlay {
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.01);
-  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.01);
+  z-index: 10;
 }
