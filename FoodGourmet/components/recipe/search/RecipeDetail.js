@@ -1,19 +1,67 @@
 import styles from './RecipeDetail.module.scss';
+import {useEffect, useState} from "react";
 
 function RecipeDetail(props) {
-    const { recipes } = props;
-    console.log(recipes);
+    const [recipe, setRecipe] = useState({strMeal: "Recipe", strMealThumb: "", strInstructions: ""})
+    const {recipeId} = props;
+
+    console.log(recipe.ingredients)
+
+    useEffect(() => {
+        const recipeData = localStorage.getItem(`recipe_${recipeId}`);
+
+        if (recipeData) {
+            setRecipe(JSON.parse(recipeData));
+        } else {
+            const fetchRecipe = async () => {
+                try {
+                    const res = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId);
+                    const data = await res.json();
+                    setRecipe(data.meals[0]);
+
+                    const ingredients = [];
+                    const measures = [];
+                    Object.keys(data.meals[0]).forEach(key => {
+                        if (key.includes("strIngredient") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
+                            console.log(data.meals[0][key])
+                            ingredients.push(data.meals[0][key]);
+                        }
+                        if (key.includes("strMeasure") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
+                            measures.push(data.meals[0][key]);
+                        }
+                    });
+
+                    data.meals[0].ingredients = ingredients;
+                    data.meals[0].measures = measures;
+
+                    localStorage.setItem(`recipe_${recipeId}`, JSON.stringify(data.meals[0]));
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            fetchRecipe();
+        }
+    }, [recipeId]);
+
+    useEffect(() => {
+        document.title = `${recipe.strMeal} - Epicurean`;
+    }, [recipe]);
 
     return (
         <div className={styles.recipe}>
             <div>
-                <img src={recipes.image} alt={recipes.title} />
+                <img className={styles.recipe__image} src={recipe.strMealThumb} alt={recipe.strMeal}/>
                 <div className={styles.recipe__rating}>RATING</div>
             </div>
             <div>
-                <div className={styles.recipe__title}>NAME</div>
-                <div className={styles.recipe__ingredients}>INGREDIENTS</div>
-                <div className={styles.recipe__instructions}>INSTRUCTIONS</div>
+                <div className={styles.recipe__title}>{recipe.strMeal}</div>
+                <ul className={styles.recipe__ingredients}>
+                    {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
+                        <li className={styles.recipe__ingredients__item} key={index}>{ingredient} - {recipe.measures[index]}</li>
+                    ))}
+                </ul>
+                <div className={styles.recipe__instructions}
+                     style={{whiteSpace: "pre-line"}}>{recipe.strInstructions}</div>
             </div>
             <div className={styles.recipe__comments}>COMMENTS</div>
         </div>

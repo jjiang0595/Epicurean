@@ -7,6 +7,7 @@ function RecipeList(props) {
             <div className={styles.list__recipes}>
                 {props.recipes.map((recipe) => (
                     <RecipeItem key={recipe.key}
+                                recipeId={recipe.key}
                                 title={recipe.title}
                                 image={recipe.image}
                                 description={recipe.instr}

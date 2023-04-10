@@ -15,13 +15,6 @@ export async function getServerSideProps({query}) {
     const data = await res.json();
     const recipes = data.meals;
 
-    if (recipes === null) {
-        return {
-            props: {
-                recipes: []
-            },
-        }
-    }
     return {
         props: {
             recipes: recipes.map(recipe => ({

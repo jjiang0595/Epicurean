@@ -3,14 +3,78 @@
   padding-left: 20rem;
   padding-right: 20rem;
   grid-template-columns: .3fr .7fr;
-  grid-template-rows: repeat(4, min-content);
-  grid-column-gap: 3rem;
+  grid-template-rows: repeat(4, max-content);
+  grid-column-gap: 8rem;
 
   background-color: rgb(233, 233, 233);
   padding-top: 10rem;
 
   &__image {
     border-radius: 1rem;
-    width: 30rem;
+    width: 50rem;
+  }
+
+  &__rating {
+
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: "Noto Serif";
+    margin-bottom: 4rem;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -12px;
+      height: 2px;
+      background-color: #000000;
+      margin: 0 auto;
+      width: 83%;
+      transform: scaleX(1.2);
+      opacity: 0.25;
+    }
+  }
+
+  &__ingredients {
+    line-height: 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__item {
+      flex-basis: calc(50% - 2.5rem);
+      margin: .5rem;
+      padding-left: .8rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.625rem;
+        left: -.5rem;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: #000;
+      }
+    }
+
+  }
+
+  &__instructions {
+    font-size: 2rem;
+    line-height: 3rem;
+
+  }
+
+  &__comments {
+
   }
 }
