@@ -6,6 +6,7 @@
   border-radius: 100%;
   position: relative;
 
+
   @media only screen and (max-width: 1100px) {
     flex: 0 0 35%;
   }
@@ -23,7 +24,7 @@
     background-color: #F5EBEB;
     font-family: inherit;
     font-size: inherit;
-    border: .2rem solid #E5C6C3;
+    border: .1rem solid black;
     padding: 1rem 2rem;
     border-radius: 2rem;
     width: 75rem;
@@ -39,12 +40,6 @@
       color: black;
       opacity: .75;
     }
-
-    &__bottom {
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-
   }
 
   &__button {
@@ -57,42 +52,6 @@
     width: 3rem;
     fill: black;
     transition: all .5s ease;
-  }
-
-
-  // SEARCH RESULTS
-  &__results {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    background-color: #f4f2f2;
-    overflow: hidden;
-    transition: all .2s ease;
-    z-index: 10;
-
-    @media only screen and (max-width: 966px) {
-      top: 60%;
-    }
-
-    &__item {
-      display: flex;
-      align-items: center;
-      padding: 1rem;
-      flex-direction: column;
-      border-bottom: 1px solid #ccc;
-      text-decoration: none;
-
-      &__title {
-        font-size: 1.4rem;
-        font-weight: 300;
-        color: #999;
-        margin-bottom: .5rem;
-      }
-
-      &:hover > &__title {
-        color: #000000;
-      }
-    }
   }
 }
 
@@ -107,14 +66,4 @@
   100% {
     width: 75rem;
   }
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.01);
-  z-index: 10;
 }

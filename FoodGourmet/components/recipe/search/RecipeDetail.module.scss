@@ -1,17 +1,17 @@
 .recipe {
   display: grid;
   padding-left: 20rem;
-  padding-right: 20rem;
-  grid-template-columns: .3fr .7fr;
+  grid-template-columns: .3fr .8fr;
   grid-template-rows: repeat(4, max-content);
-  grid-column-gap: 8rem;
+  grid-column-gap: 7rem;
+
 
   background-color: rgb(233, 233, 233);
   padding-top: 10rem;
 
   &__image {
     border-radius: 1rem;
-    width: 50rem;
+    width: 60rem;
   }
 
   &__rating {
@@ -19,7 +19,7 @@
   }
 
   &__title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 700;
     font-family: "Noto Serif";
     margin-bottom: 4rem;
@@ -35,15 +35,15 @@
       height: 2px;
       background-color: #000000;
       margin: 0 auto;
-      width: 83%;
-      transform: scaleX(1.2);
+      width: 100%;
       opacity: 0.25;
     }
   }
 
   &__ingredients {
     line-height: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -69,12 +69,36 @@
   }
 
   &__instructions {
-    font-size: 2rem;
-    line-height: 3rem;
+    font-size: 1.75rem;
+    line-height: 2rem;
 
   }
 
-  &__comments {
-
+  &__hr {
   }
+}
+
+/* Style the separator container */
+.separatorContainer {
+  background-color: rgb(233, 233, 233);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem; /* Add margin as needed */
+}
+
+/* Style the separator line */
+.separatorLine {
+  background-color: rgb(233, 233, 233);
+
+  flex-grow: .4;
+  border-top: 1px solid #000; /* Set the desired border style and color */
+}
+
+/* Style the separator text or image */
+.separatorText {
+  background-color: rgb(233, 233, 233);
+  padding: 0 1rem; /* Add padding as needed */
+  font-size: 1.2rem; /* Set the desired font size */
+  font-weight: bold; /* Set the desired font weight */
 }

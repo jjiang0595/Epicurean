@@ -68,35 +68,17 @@ const Searchbar = (props) => {
 
     return (
         <form action="#" className={styles.search} onSubmit={submitHandler}>
-            <button className={styles.search__button}  onMouseEnter={() => setShowSearch(true)}>
-                <svg className={`${styles.search__icon} ${showSearch ? styles.rotated : ''}`} onTransitionEnd={handleAnimationEnd}>
+            <button className={styles.search__button} onMouseEnter={() => setShowSearch(true)}>
+                <svg className={`${styles.search__icon} ${showSearch ? styles.rotated : ''}`}
+                     onTransitionEnd={handleAnimationEnd}>
                     <use href={isRotated ? '/sprite.svg#icon-empty-glass' : '/sprite.svg#icon-full-glass'}></use>
                 </svg>
             </button>
             {isRotated &&
-                <>
-                    <input type="text" ref={query} onChange={searchHandler}
-                           className={`${styles.search__input} ${showResults ? styles.search__input__bottom : ''}`}
-                           placeholder="Search for a recipe..."/>
-                    <div className={styles.search__results}>
-                        {showResults && searchResults.map((recipe) => (
-                            <Link href={{
-                                pathname: `/recipes/${recipe.key}`,
-                                query: {
-                                    recipeKey: recipe.idMeal,
-                                    title: recipe.strMeal,
-                                    image: recipe.strMealThumb,
-                                    instr: recipe.strInstructions
-                                }
-                            }} as={`/recipes/${recipe.recipeKey}`} className={styles.search__results__item}
-                                  onClick={deleteSearchTerm}>
-                                <span className={styles.search__results__item__title}>{recipe.title}</span>
-                            </Link>
-                        ))}
-                        {searchResults.length === 0 && showResults &&
-                            <p className={styles.search__results__item}>No results found</p>}
-                    </div>
-                </>
+                <input type="text" ref={query} onChange={searchHandler}
+                       className={`${styles.search__input} ${showResults ? styles.search__input__bottom : ''}`}
+                       placeholder="Search for a recipe..."/>
+
             }
             {showResults ? <div className={styles.overlay} onClick={() => setShowResults(false)}/> : null}
         </form>

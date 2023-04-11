@@ -1,5 +1,6 @@
 import styles from './RecipeDetail.module.scss';
 import {useEffect, useState} from "react";
+import RecipeReviews from "../RecipeReviews";
 
 function RecipeDetail(props) {
     const [recipe, setRecipe] = useState({strMeal: "Recipe", strMealThumb: "", strInstructions: ""})
@@ -48,23 +49,33 @@ function RecipeDetail(props) {
     }, [recipe]);
 
     return (
-        <div className={styles.recipe}>
-            <div>
-                <img className={styles.recipe__image} src={recipe.strMealThumb} alt={recipe.strMeal}/>
-                <div className={styles.recipe__rating}>RATING</div>
+        <>
+            <div className={styles.recipe}>
+                <div>
+                    <img className={styles.recipe__image} src={recipe.strMealThumb} alt={recipe.strMeal}/>
+                </div>
+                <div>
+                    <div className={styles.recipe__title}>{recipe.strMeal}</div>
+                    <ul className={styles.recipe__ingredients}>
+                        {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
+                            <li className={styles.recipe__ingredients__item}
+                                key={index}>{ingredient} - {recipe.measures[index]}</li>
+                        ))}
+                    </ul>
+                    <div className={styles.recipe__instructions}
+                         style={{whiteSpace: "pre-line"}}>{recipe.strInstructions}</div>
+                </div>
             </div>
-            <div>
-                <div className={styles.recipe__title}>{recipe.strMeal}</div>
-                <ul className={styles.recipe__ingredients}>
-                    {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
-                        <li className={styles.recipe__ingredients__item} key={index}>{ingredient} - {recipe.measures[index]}</li>
-                    ))}
-                </ul>
-                <div className={styles.recipe__instructions}
-                     style={{whiteSpace: "pre-line"}}>{recipe.strInstructions}</div>
+            <div className={styles.separatorContainer}>
+                <div className={styles.separatorLine}></div>
+                <div className={styles.separatorText}>
+                    HELLO
+                    {/* Replace with your desired text or image */}
+                </div>
+                <div className={styles.separatorLine}></div>
             </div>
-            <div className={styles.recipe__comments}>COMMENTS</div>
-        </div>
+            <RecipeReviews gridColumn="1 / -1" recipeId={recipe.idMeal} />
+        </>
     );
 }
 

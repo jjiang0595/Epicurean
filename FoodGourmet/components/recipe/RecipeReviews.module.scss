@@ -1,0 +1,323 @@
+.reviews {
+  padding-top: 5rem;
+  min-height: 30rem;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  grid-gap: 5rem;
+  background-color: rgb(233, 233, 233);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 5rem;
+
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: .5rem;
+      height: 4rem;
+      background-color: darksalmon;
+      margin-right: 1rem;
+      border-radius: 1rem;
+    }
+  }
+
+  // -------------------------- STAR/CLOSE ICON ----------------------------
+  &__star {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: #FDCC0D;
+    margin-right: .5rem;
+    position: relative;
+    bottom: .1rem;
+  }
+
+  &__button {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 2rem;
+
+    &:hover > &__text {
+      display: block;
+    }
+
+    &__close {
+      align-self: center;
+      width: 2rem;
+      height: 2rem;
+      fill: black;
+      cursor: pointer;
+    }
+
+    &__text {
+      display: none;
+      position: absolute;
+      width: max-content;
+      padding: .4rem;
+      top: -3.7rem;
+      right: -3.5rem;
+      background-color: lightgray;
+      border: 1px solid black;
+      border-radius: .5rem;
+      pointer-events: none;
+      animation: fadein .3s ease-in-out;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 2.3rem;
+        right: 3.4rem;
+        border: 1.1rem solid transparent;
+        border-top: 1.1rem solid black;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2.25rem;
+        right: 3.5rem;
+        border: 1rem solid transparent;
+        border-top: 1rem solid lightgray;
+      }
+    }
+  }
+
+  // -----------------------------------------------------
+
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      position: relative;
+      font-size: 2rem;
+      background-color: #f4f2f2;
+      padding: 1rem 1rem 1.25rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      user-select: none;
+
+      &:after {
+        content: "";
+        background-color: #f4f2f2;
+
+        position: absolute;
+        bottom: -.24rem;
+        left: 12rem;
+        height: 1.5rem;
+        width: 2rem;
+      }
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      border: 1px solid black;
+      border-radius: 1rem;
+      background-color: #f4f2f2;
+
+      &__fadeout {
+        animation: fadeout .5s forwards;
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        height: 3rem;
+
+        &__selfRating {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: 1rem;
+
+          &__text {
+            position: relative;
+            bottom: .6rem;
+          }
+        }
+
+        &__rating {
+          display: flex;
+          margin-bottom: 1rem;
+
+          &__text {
+            padding-top: .1rem;
+          }
+        }
+
+        &__title {
+          font-weight: 700;
+          font-size: 2.25rem;
+        }
+      }
+
+      &__body {
+        font-size: 1.4rem;
+        color: #000000;
+
+        &__text {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+
+  // ------------------------------ ADDING REVIEW ------------------------------
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &__guest {
+      display: flex;
+      justify-content: center;
+      margin-top: 6rem;
+      margin-bottom: 6rem;
+    }
+
+    &__header {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 3rem;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: .5rem;
+        height: 4rem;
+        background-color: darksalmon;
+        margin-right: 1rem;
+        border-radius: 2rem;
+      }
+    }
+
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+
+      &__label {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: .5rem;
+      }
+
+      &__input {
+        font-family: inherit;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: 1px solid #999;
+        font-size: 1.6rem;
+        max-height: 20rem;
+        min-height: 3rem;
+        max-width: 100%;
+        min-width: 100%;
+        resize: none;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 1px solid #999;
+      font-size: 2rem;
+      cursor: pointer;
+      background-color: #62B6B7;
+      color: white;
+    }
+  }
+}
+
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+  margin-top: 1rem;
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
+}

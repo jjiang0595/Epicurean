@@ -11,19 +11,27 @@ const SearchResults = (props) => {
 
 export async function getServerSideProps({query}) {
     const searchQuery = query.query;
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
-    const data = await res.json();
-    const recipes = data.meals;
+    try {
+        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
+        const data = await res.json();
+        const recipes = data.meals;
 
-    return {
-        props: {
-            recipes: recipes.map(recipe => ({
-                key: recipe.idMeal,
-                title: recipe.strMeal,
-                image: recipe.strMealThumb,
-                instr: recipe.strInstructions
-            }))
-        },
+        return {
+            props: {
+                recipes: recipes.map(recipe => ({
+                    key: recipe.idMeal,
+                    title: recipe.strMeal,
+                    image: recipe.strMealThumb,
+                    instr: recipe.strInstructions
+                }))
+            },
+        }
+    } catch (error) {
+        return {
+            props: {
+                recipes: []
+            }
+        }
     }
 }
 
