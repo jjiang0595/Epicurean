@@ -6,6 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/MainNavigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/MainNavigation.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/Searchbar.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/layout/layout.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeReviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/RecipeReviews.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeCarousel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeCarousel.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeInstructions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/carousel/RecipeInstructions.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeDetail.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeItem.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/components/recipe/search/RecipeList.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/_app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/recipes/[recipeId]/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/pages/search/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/public/sprite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/styles/globals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FoodGourmet/utils/capitalizeString.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +112,9 @@
       <workItem from="1680721801508" duration="18981000" />
       <workItem from="1681006937095" duration="5182000" />
       <workItem from="1681059177290" duration="16033000" />
-      <workItem from="1681147093309" duration="657000" />
+      <workItem from="1681147093309" duration="17123000" />
+      <workItem from="1681234234257" duration="17299000" />
+      <workItem from="1681265117654" duration="1836000" />
     </task>
     <servers />
   </component>

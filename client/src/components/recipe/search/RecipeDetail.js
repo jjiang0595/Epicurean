@@ -1,12 +1,10 @@
 import styles from './RecipeDetail.module.scss';
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import RecipeReviews from "../RecipeReviews";
 
 function RecipeDetail(props) {
     const [recipe, setRecipe] = useState({strMeal: "Recipe", strMealThumb: "", strInstructions: ""})
     const {recipeId} = props;
-
-    console.log(recipe.ingredients)
 
     useEffect(() => {
         const recipeData = localStorage.getItem(`recipe_${recipeId}`);
@@ -67,14 +65,13 @@ function RecipeDetail(props) {
                 </div>
             </div>
             <div className={styles.separatorContainer}>
-                <div className={styles.separatorLine}></div>
+                <div className={styles.separator}></div>
                 <div className={styles.separatorText}>
-                    HELLO
-                    {/* Replace with your desired text or image */}
+                    Reviews Below
                 </div>
-                <div className={styles.separatorLine}></div>
+                <div className={styles.separator}></div>
             </div>
-            <RecipeReviews gridColumn="1 / -1" recipeId={recipe.idMeal} />
+                <RecipeReviews gridColumn="1 / -1" recipeId={recipe.idMeal}/>
         </>
     );
 }

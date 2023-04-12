@@ -4,6 +4,7 @@
   grid-template-columns: .3fr .8fr;
   grid-template-rows: repeat(4, max-content);
   grid-column-gap: 7rem;
+  min-height: 85vh;
 
 
   background-color: rgb(233, 233, 233);
@@ -78,27 +79,24 @@
   }
 }
 
-/* Style the separator container */
 .separatorContainer {
   background-color: rgb(233, 233, 233);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem; /* Add margin as needed */
+  padding-bottom: 5rem;
 }
 
-/* Style the separator line */
-.separatorLine {
+.separator {
   background-color: rgb(233, 233, 233);
 
   flex-grow: .4;
-  border-top: 1px solid #000; /* Set the desired border style and color */
+  border-top: 1px solid #000;
 }
 
-/* Style the separator text or image */
 .separatorText {
   background-color: rgb(233, 233, 233);
-  padding: 0 1rem; /* Add padding as needed */
-  font-size: 1.2rem; /* Set the desired font size */
-  font-weight: bold; /* Set the desired font weight */
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
