@@ -5,11 +5,9 @@ import Searchbar from "./Searchbar";
 export default function MainNavigation() {
     return (
         <nav className={styles.header}>
-            <Link href={'/'} className={styles.header__link}>
-                <h1>Epicurean</h1>
-            </Link>
+            <Link href={'/'} className={styles.header__logo}>Epicurean</Link>
             <Searchbar />
-            <button type="button" className={styles.header__link}>Login</button>
+            <Link href="/login" className={styles.header__auth}>Sign In</Link>
         </nav>
     )
 }

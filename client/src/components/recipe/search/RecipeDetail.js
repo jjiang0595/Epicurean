@@ -16,24 +16,26 @@ function RecipeDetail(props) {
                 try {
                     const res = await fetch("https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + recipeId);
                     const data = await res.json();
-                    setRecipe(data.meals[0]);
+                    if (data.meals && data.meals.length > 0) {
+                        setRecipe(data.meals[0]);
 
-                    const ingredients = [];
-                    const measures = [];
-                    Object.keys(data.meals[0]).forEach(key => {
-                        if (key.includes("strIngredient") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
-                            console.log(data.meals[0][key])
-                            ingredients.push(data.meals[0][key]);
-                        }
-                        if (key.includes("strMeasure") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
-                            measures.push(data.meals[0][key]);
-                        }
-                    });
+                        const ingredients = [];
+                        const measures = [];
+                        Object.keys(data.meals[0]).forEach(key => {
+                            if (key.includes("strIngredient") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
+                                console.log(data.meals[0][key])
+                                ingredients.push(data.meals[0][key]);
+                            }
+                            if (key.includes("strMeasure") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
+                                measures.push(data.meals[0][key]);
+                            }
+                        });
 
-                    data.meals[0].ingredients = ingredients;
-                    data.meals[0].measures = measures;
+                        data.meals[0].ingredients = ingredients;
+                        data.meals[0].measures = measures;
 
-                    localStorage.setItem(`recipe_${recipeId}`, JSON.stringify(data.meals[0]));
+                        localStorage.setItem(`recipe_${recipeId}`, JSON.stringify(data.meals[0]));
+                    }
                 } catch (error) {
                     console.log(error);
                 }

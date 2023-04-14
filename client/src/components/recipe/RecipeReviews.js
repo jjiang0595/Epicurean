@@ -1,5 +1,6 @@
 import styles from './RecipeReviews.module.scss';
 import {useEffect, useRef, useState} from "react";
+import api from "../../utils/axiosConfig";
 
 const RecipeReviews = ({recipeId, gridColumn}) => {
     const [reviews, setReviews] = useState([]);
@@ -7,8 +8,23 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
     const title = useRef('');
     const review = useRef('');
     const [fade, setFade] = useState(false);
+    const [submit, setSubmit] = useState(false);
 
     const [userReview, setUserReview] = useState(null);
+
+    useEffect(() => {
+        const fetchReviews = async () => {
+            if (recipeId) {
+                try {
+                    const response = await api.get(`/recipe/${recipeId}`);
+                    setReviews(response.data.reviews);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        }
+        fetchReviews();
+    }, [recipeId, submit])
 
     const starHandler = (e) => {
         setStars(e.target.value);
@@ -18,18 +34,33 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
         setFade(true);
     }
 
-    const submitHandler = (e) => {
-
-    }
+    const submitHandler = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await api.post(`/recipe/${recipeId}`, {
+                title: title.current.value,
+                content: review.current.value,
+                stars: stars
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            const data = response.data;
+            setSubmit(true);
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setSubmit(false);
+        }
+    };
 
 
     return (
-        <div className={styles.reviews} style={{ gridColumn }}>
-
+        <div className={styles.reviews} style={{gridColumn}}>
             <div className={styles.reviews__form}>
                 <span
                     className={styles.reviews__form__header}>{!userReview ? "Add Your Review" : "Update Your Review"}</span>
-
                 <form onSubmit={submitHandler}>
                     <div className={styles.reviews__form__group}>
                         <fieldset className={styles.rating}>
@@ -37,55 +68,55 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                                    onChange={starHandler}/>
                             <label className="full"
                                    htmlFor="star5"
-                                   title="Awesome - 5 stars"/>
+                                   title="5 stars"/>
                             <input type="radio" id="star4half" name="stars" value="4.5"
                                    onChange={starHandler}/>
                             <label
                                 className={styles.half}
                                 htmlFor="star4half"
-                                title="Pretty good - 4.5 stars"/>
+                                title="4.5 stars"/>
                             <input type="radio" id="star4" name="stars" value="4"
                                    onChange={starHandler}/>
                             <label className="full"
                                    htmlFor="star4"
-                                   title="Pretty good - 4 stars"/>
+                                   title="4 stars"/>
                             <input type="radio" id="star3half" name="stars" value="3.5"
                                    onChange={starHandler}/>
                             <label
                                 className={styles.half}
                                 htmlFor="star3half"
-                                title="Meh - 3.5 stars"/>
+                                title="3.5 stars"/>
                             <input type="radio" id="star3" name="stars" value="3"
                                    onChange={starHandler}/>
                             <label className="full"
                                    htmlFor="star3"
-                                   title="Meh - 3 stars"/>
+                                   title="3 stars"/>
                             <input type="radio" id="star2half" name="stars" value="2.5"
                                    onChange={starHandler}/>
                             <label className={styles.half}
                                    htmlFor="star2half"
-                                   title="Kinda bad - 2.5 stars"/>
+                                   title="2.5 stars"/>
                             <input type="radio" id="star2" name="stars" value="2"
                                    onChange={starHandler}/>
                             <label className="full"
                                    htmlFor="star2"
-                                   title="Kinda bad - 2 stars"/>
+                                   title="2 stars"/>
                             <input type="radio" id="star1half" name="stars" value="1.5"
                                    onChange={starHandler}/>
                             <label
                                 className={styles.half}
                                 htmlFor="star1half"
-                                title="Meh - 1.5 stars"/>
+                                title="1.5 stars"/>
                             <input type="radio" id="star1" name="stars" value="1"
                                    onChange={starHandler}/>
                             <label className="full"
                                    htmlFor="star1"
-                                   title="Sucks big time - 1 star"/>
+                                   title="1 star"/>
                             <input type="radio" id="starhalf" name="stars" value=".5"
                                    onChange={starHandler}/>
                             <label className={styles.half}
                                    htmlFor="starhalf"
-                                   title="Sucks big time - 0.5 stars"/>
+                                   title="0.5 stars"/>
                         </fieldset>
                     </div>
                     <div className={styles.reviews__form__group}>
@@ -99,44 +130,62 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                                   required/>
                     </div>
                     <button className={styles.reviews__form__button}>Submit</button>
-                </form> : <p className={styles.reviews__form__guest}>Please login to leave a review!</p>
+                </form>
             </div>
 
 
             <div className={styles.reviews__list}>
                 <span className={styles.reviews__header}>User Reviews</span>
                 <div>
-                        <span className={styles.reviews__list__title}>Your Review</span>
-                        <div className={`${styles.reviews__list__item} ${fade && styles.reviews__list__item__fadeout}`}>
-                            <div className={styles.reviews__list__item__header__selfRating}>
-                                <div>
-                                    <svg className={styles.reviews__star}>
-                                        <use href="/sprite.svg#icon-star"></use>
-                                    </svg>
-                                    <span
-                                        className={styles.reviews__list__item__header__selfRating__text}>5
+                    <span className={styles.reviews__list__title}>Your Review</span>
+                    <div className={`${styles.reviews__list__item} ${fade && styles.reviews__list__item__fadeout}`}>
+                        <div className={styles.reviews__list__item__header__selfRating}>
+                            <div>
+                                <svg className={styles.reviews__star}>
+                                    <use href="/sprite.svg#icon-star"></use>
+                                </svg>
+                                <span
+                                    className={styles.reviews__list__item__header__selfRating__text}>5
                                     </span>
-                                </div>
-                                <button className={styles.reviews__button} >
-                                    <svg className={styles.reviews__button__close}>
-                                        <use href="/sprite.svg#icon-close"></use>
-                                    </svg>
-                                    <span className={styles.reviews__button__text}>Delete Review?</span>
-                                </button>
+                            </div>
+                            <button className={styles.reviews__button}>
+                                <svg className={styles.reviews__button__close}>
+                                    <use href="/sprite.svg#icon-close"></use>
+                                </svg>
+                                <span className={styles.reviews__button__text}>Delete Review?</span>
+                            </button>
+                        </div>
+                        <div className={styles.reviews__list__item__header}>
+                            <h1 className={styles.reviews__list__item__header__title}>title</h1>
+                        </div>
+                        <div className={styles.reviews__list__item__body}>
+                            <span className={styles.reviews__list__item__body__text}></span>
+                        </div>
+                    </div>
+                    <hr></hr>
+                    <br></br>
+                </div>
+
+
+                {(reviews.length > 0 || userReview) ?
+                    reviews.map(review => (
+                        <div className={styles.reviews__list__item} key={review._id}>
+                            <div className={styles.reviews__list__item__header__rating}>
+                                <svg className={styles.reviews__star}>
+                                    <use href="/sprite.svg#icon-star"></use>
+                                </svg>
+                                <span
+                                    className={styles.reviews__list__item__header__rating__text}>{review.stars}/5</span>
                             </div>
                             <div className={styles.reviews__list__item__header}>
-                                <h1 className={styles.reviews__list__item__header__title}>title</h1>
+                                <h1 className={styles.reviews__list__item__header__title}>{review.title}</h1>
                             </div>
                             <div className={styles.reviews__list__item__body}>
-                                <span className={styles.reviews__list__item__body__text}></span>
+                                <span className={styles.reviews__list__item__body__text}>{review.content}</span>
                             </div>
                         </div>
-                        <hr></hr>
-                        <br></br>
-                    </div>
-
-
-            <p>There are no reviews for this recipe yet.</p>
+                    ))
+                    : <p>There are no reviews for this movie yet.</p>}
 
             </div>
         </div>)
