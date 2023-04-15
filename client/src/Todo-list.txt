@@ -1,0 +1,18 @@
+Todo List
+----------
+1) Add reviews to the user schema
+2) Change the sign in button to sign out depending on whether the user is signed in or not
+
+
+Visual Todo List
+----------------
+1) Update search bar
+2) Update search results
+3) Change the no results page
+4) Add a home page instead of the user landing on the random recipe page
+5) Add better fonts to improve the overall look of the website
+
+Later On
+--------
+1) Make the website more mobile friendly
+2) Add a way to add recipes to a favorites list
