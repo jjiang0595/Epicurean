@@ -5,7 +5,7 @@ export default function Home(props) {
     return (
         <>
             <Head>
-                <title>Food Gourmet</title>
+                <title>Epicurean</title>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <RecipeCarousel recipes={props.recipes[0]} />

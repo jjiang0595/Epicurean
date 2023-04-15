@@ -18,6 +18,7 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                 try {
                     const response = await api.get(`/recipe/${recipeId}`);
                     setReviews(response.data.reviews);
+                    setSubmit(false);
                 } catch (error) {
                     console.log(error);
                 }
@@ -50,8 +51,6 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             setSubmit(true);
         } catch (error) {
             console.log(error);
-        } finally {
-            setSubmit(false);
         }
     };
 
