@@ -16,7 +16,7 @@
   &__header {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
     &__text {
       font-size: 5rem;
@@ -82,9 +82,15 @@
     font-size: inherit;
     color: inherit;
     border: none;
-    padding: 1rem 2.5rem;
+    padding: 1rem 1.5rem;
     margin-top: .75rem;
+    box-shadow: 0 0 0 .25px #000000;
     transition: all .2s ease;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2.5px #bebbbb;
+    }
   }
 }
 
@@ -94,17 +100,18 @@
   width: 100%;
 
   &__button {
-    background-color: #b0aaaa;
-    font-weight: 600;
+    background-color: #868585;
+    font-weight: 300;
     font-size: 1.6rem;
-    padding: 1rem 3rem;
+    padding: 1.5rem 3rem;
+    color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5rem;
     cursor: pointer;
     transition: all .2s ease;
 
     &:hover {
-      background-color: #8ef8cc;
+      background-color: #444343;
     }
   }
 }

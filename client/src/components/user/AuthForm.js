@@ -1,11 +1,16 @@
 import styles from './AuthForm.module.scss'
-import {useRef, useState} from "react";
-
+import {useEffect, useRef, useState} from "react";
+import api from "../../utils/axiosConfig";
+import {router} from "next/client";
 
 const AuthForm = (props) => {
     const [authType, setAuthType] = useState(true);
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
+
+    useEffect(() => {
+        document.title = `Epicurean Sign-In`;
+    })
 
     const authTypeHandler = type => () => {
         emailInputRef.current.value = '';
@@ -15,7 +20,24 @@ const AuthForm = (props) => {
     }
 
     const submitHandler = async (event) => {
-
+        event.preventDefault();
+        const email = emailInputRef.current.value;
+        const password = passwordInputRef.current.value;
+        const auth = authType ? 'login' : 'register';
+        try {
+            const response = await api.post(`/auth/${auth}`, {email, password}, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = response.data; // Access response data from 'data' property
+            // Handle response data as needed (e.g., check for authentication success, display error messages, etc.)
+            if (data.status === "success") {
+                await router.push('/')
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 
     return (
@@ -27,7 +49,7 @@ const AuthForm = (props) => {
                             <h1 className={styles.authForm__header__text}>Log in</h1>
                             <div className={styles.authForm__header__authType}> Don't have an account?
                                 <button className={styles.authForm__header__authType__button}
-                                    onClick={authTypeHandler(false)}>Sign up
+                                        onClick={authTypeHandler(false)}>Sign up
                                 </button>
                             </div>
                         </>
@@ -48,7 +70,8 @@ const AuthForm = (props) => {
                     </div>
                     <div className={styles.control}>
                         <label>Password</label>
-                        <input ref={passwordInputRef} className={styles.control__input} type="password" id="password" required/>
+                        <input ref={passwordInputRef} className={styles.control__input} type="password" id="password"
+                               required/>
                     </div>
                     <div className={styles.actions}>
                         <button className={styles.actions__button}>{authType ? 'Sign In' : 'Register'}</button>
@@ -56,7 +79,7 @@ const AuthForm = (props) => {
                 </form>
             </div>
             <div className={styles.background}>
-                <img className={styles.background__img} src="/food.jpg"   alt="breakfast background"/>
+                <img className={styles.background__img} src="/food.jpg" alt="breakfast background"/>
             </div>
         </div>
     )
