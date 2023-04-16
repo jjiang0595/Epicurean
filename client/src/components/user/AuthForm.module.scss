@@ -10,16 +10,19 @@
   display: flex;
   flex-direction: column;
   padding-top: 10rem;
-  padding-left: 10rem;
+  align-items: center;
 
+  margin-top: 5rem;
 
   &__header {
     display: flex;
     flex-direction: column;
     margin-bottom: 4rem;
+    margin-right: 26.5rem;
 
     &__text {
       font-size: 5rem;
+
     }
 
     &__authType {
@@ -34,10 +37,6 @@
         padding-left: 1rem;
         background: none;
         text-decoration: underline;
-
-        &:hover {
-
-        }
       }
     }
   }
@@ -80,8 +79,10 @@
   &__input {
     font-family: inherit;
     font-size: inherit;
+    width: 50rem;
     color: inherit;
     border: none;
+    border-radius: .25rem;
     padding: 1rem 1.5rem;
     margin-top: .75rem;
     box-shadow: 0 0 0 .25px #000000;

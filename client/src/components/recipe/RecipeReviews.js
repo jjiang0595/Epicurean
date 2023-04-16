@@ -1,8 +1,10 @@
 import styles from './RecipeReviews.module.scss';
-import {useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import api from "../../utils/axiosConfig";
+import {AuthContext} from "../../store/AuthContext";
 
 const RecipeReviews = ({recipeId, gridColumn}) => {
+    const {user} = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const [stars, setStars] = useState(0);
     const title = useRef('');
@@ -41,7 +43,8 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             const response = await api.post(`/recipe/${recipeId}`, {
                 title: title.current.value,
                 content: review.current.value,
-                stars: stars
+                stars: stars,
+                id: user
             }, {
                 headers: {
                     'Content-Type': 'application/json',

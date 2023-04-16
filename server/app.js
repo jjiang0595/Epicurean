@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('./models/user');
 require('dotenv').config();
 
 const app = express();
@@ -32,19 +29,16 @@ app.use(session({
     },
 }));
 
-// Configure passport
-passport.use(User.createStrategy());
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 app.use(express.json()); // Parse JSON request body
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(cors({
     origin: 'http://localhost:3000',
 }));
+app.use((req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
 
 // Define routes
 const reviewsRoutes = require('./routes/reviews');

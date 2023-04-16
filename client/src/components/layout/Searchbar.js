@@ -1,6 +1,5 @@
 import styles from './Searchbar.module.scss';
 import {useRef, useState} from "react";
-import Link from "next/link";
 import {useRouter} from "next/router";
 
 const Searchbar = (props) => {
