@@ -53,12 +53,12 @@ const AuthForm = (props) => {
                 <form onSubmit={submitHandler} className={styles.form}>
                     <div className={styles.control}>
                         <label>Email Address</label>
-                        <input ref={emailInputRef} className={styles.control__input} type="email" id="email" required/>
+                        <input ref={emailInputRef} className={styles.control__input} type="email" id="email" />
                     </div>
                     <div className={styles.control}>
                         <label>Password</label>
                         <input ref={passwordInputRef} className={styles.control__input} type="password" id="password"
-                               required/>
+                               />
                     </div>
                     <div className={styles.actions}>
                         <button className={styles.actions__button}>{authType ? 'Sign In' : 'Register'}</button>

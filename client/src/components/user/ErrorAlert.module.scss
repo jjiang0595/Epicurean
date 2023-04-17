@@ -1,14 +1,23 @@
 .alert {
   position: absolute;
-  top: 12%;
+  height: 6rem;
+  top: 15%;
   color: black;
-  padding: 1.125rem 5rem;
+  padding: 0 2rem;
   margin-bottom: 4rem;
+
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  width: max-content;
+  border-radius: .5rem;
+  width: 50rem;
   background-color: #f8d7da;
+
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    margin-right: 1rem;
+  }
 
   &__text {
     font-size: 1.6rem;

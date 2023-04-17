@@ -1,5 +1,4 @@
 import styles from './RecipeItem.module.scss';
-import Link from "next/link";
 import {useState} from "react";
 import {capitalizeString} from "../../../utils/capitalizeString";
 import {useRouter} from "next/router";

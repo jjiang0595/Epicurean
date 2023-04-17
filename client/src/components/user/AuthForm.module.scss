@@ -10,15 +10,14 @@
   display: flex;
   flex-direction: column;
   padding-top: 10rem;
-  align-items: center;
+  margin-left: 20rem;
 
-  margin-top: 5rem;
+  margin-top: 10rem;
 
   &__header {
     display: flex;
     flex-direction: column;
     margin-bottom: 4rem;
-    margin-right: 26.5rem;
 
     &__text {
       font-size: 5rem;
@@ -43,7 +42,7 @@
 }
 
 .background {
-  flex: .75;
+  flex: 1;
 
   &__img {
     width: 100%;

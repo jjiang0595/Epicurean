@@ -22,6 +22,9 @@ const AuthAlert = () => {
         <>
             {showAlert &&
                 <div className={`${styles.alert}`} >
+                    <svg className={styles.alert__icon}>
+                        <use href="/sprite.svg#icon-cancel"></use>
+                    </svg>
                     <p className={styles.alert__text}>{router.query.message}</p>
                 </div>}
         </>

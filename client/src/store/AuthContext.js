@@ -30,6 +30,24 @@ export const AuthProvider = ({children}) => {
         }, []);
 
         const handleAuth = async (authType, email, password) => {
+            if (!email) {
+                router.push({
+                    pathname: '/login',
+                    query: {
+                        message: 'Please enter an email address.',
+                    },
+                }, '/login');
+                return;
+            }
+            if (!password) {
+                router.push({
+                    pathname: '/login',
+                    query: {
+                        message: 'Please enter a password.',
+                    },
+                }, '/login');
+                return;
+            }
             if (!authType) {
                 createUserWithEmailAndPassword(auth, email, password).then((userCredential) => {
                     onAuthStateChanged(auth, (user) => {

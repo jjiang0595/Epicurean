@@ -14,6 +14,8 @@ const AuthCodeMap = (authCode) => {
             return "You have made too many requests. Please try again later.";
         case "auth/weak-password":
             return "Password provided is too weak. Please use a stronger password over 6 characters.";
+        default:
+            return "An unknown error occurred.";
     }
 }
 

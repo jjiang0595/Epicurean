@@ -5,6 +5,7 @@ import {AuthContext} from "../../store/AuthContext";
 
 const RecipeReviews = ({recipeId, gridColumn}) => {
     const {user} = useContext(AuthContext);
+
     const [reviews, setReviews] = useState([]);
     const [stars, setStars] = useState(0);
     const title = useRef('');
@@ -19,7 +20,18 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             if (recipeId) {
                 try {
                     const response = await api.get(`/recipe/${recipeId}`);
-                    setReviews(response.data.reviews);
+
+                    const reviewsList = [];
+                    for (let review of response.data.reviews) {
+                        console.log("user id" + review.userId, user)
+                        if (review.userId === user) {
+                            setUserReview(review);
+                        } else {
+                            reviewsList.push(review)
+                        }
+                    }
+                    setReviews(reviewsList);
+
                     setSubmit(false);
                 } catch (error) {
                     console.log(error);
@@ -27,7 +39,13 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             }
         }
         fetchReviews();
-    }, [recipeId, submit])
+    }, [recipeId, submit, user])
+
+    const resetForm = () => {
+        title.current.value = '';
+        review.current.value = '';
+        setStars(0);
+    }
 
     const starHandler = (e) => {
         setStars(e.target.value);
@@ -37,20 +55,36 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
         setFade(true);
     }
 
+    const deleteHandler = async () => {
+        await api.delete(`/${recipeId}/${userReview.userId}`);
+        setUserReview(null);
+    }
+
+    const updateHandler = async () => {
+        await submitReview('PUT')
+    }
+
     const submitHandler = async (e) => {
         e.preventDefault();
+        await submitReview('POST')
+    }
+
+    const submitReview = async (httpMethod) => {
+        console.log(httpMethod)
         try {
-            const response = await api.post(`/recipe/${recipeId}`, {
-                title: title.current.value,
-                content: review.current.value,
-                stars: stars,
-                id: user
-            }, {
+            await api({
+                method: httpMethod,
+                url: `/recipe/${recipeId}`,
+                data: {
+                    title: title.current.value,
+                    content: review.current.value,
+                    stars: stars,
+                    userId: user
+                },
                 headers: {
                     'Content-Type': 'application/json',
                 }
             });
-            const data = response.data;
             setSubmit(true);
         } catch (error) {
             console.log(error);
@@ -63,7 +97,7 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             <div className={styles.reviews__form}>
                 <span
                     className={styles.reviews__form__header}>{!userReview ? "Add Your Review" : "Update Your Review"}</span>
-                <form onSubmit={submitHandler}>
+                <form onSubmit={!userReview ? submitHandler : updateHandler}>
                     <div className={styles.reviews__form__group}>
                         <fieldset className={styles.rating}>
                             <input type="radio" id="star5" name="stars" value="5"
@@ -138,35 +172,38 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
 
             <div className={styles.reviews__list}>
                 <span className={styles.reviews__header}>User Reviews</span>
-                <div>
-                    <span className={styles.reviews__list__title}>Your Review</span>
-                    <div className={`${styles.reviews__list__item} ${fade && styles.reviews__list__item__fadeout}`}>
-                        <div className={styles.reviews__list__item__header__selfRating}>
-                            <div>
-                                <svg className={styles.reviews__star}>
-                                    <use href="/sprite.svg#icon-star"></use>
-                                </svg>
-                                <span
-                                    className={styles.reviews__list__item__header__selfRating__text}>5
+                {(userReview && userReview.userId === user) &&
+                    <div key={userReview.userId}>
+                        <span className={styles.reviews__list__title}>Your Review</span>
+                        <div className={`${styles.reviews__list__item} ${fade && styles.reviews__list__item__fadeout}`}>
+                            <div className={styles.reviews__list__item__header__selfRating}>
+                                <div>
+                                    <svg className={styles.reviews__star}>
+                                        <use href="/sprite.svg#icon-star"></use>
+                                    </svg>
+                                    <span
+                                        className={styles.reviews__list__item__header__selfRating__text}>{userReview.stars}/5
                                     </span>
+                                </div>
+                                <button className={styles.reviews__button}
+                                        onClick={() => fadeOut(setTimeout(() => deleteHandler(), 500))}>
+                                    <svg className={styles.reviews__button__close}>
+                                        <use href="/sprite.svg#icon-close"></use>
+                                    </svg>
+                                    <span className={styles.reviews__button__text}>Delete Review?</span>
+                                </button>
                             </div>
-                            <button className={styles.reviews__button}>
-                                <svg className={styles.reviews__button__close}>
-                                    <use href="/sprite.svg#icon-close"></use>
-                                </svg>
-                                <span className={styles.reviews__button__text}>Delete Review?</span>
-                            </button>
+                            <div className={styles.reviews__list__item__header}>
+                                <h1 className={styles.reviews__list__item__header__title}>{userReview.title}</h1>
+                            </div>
+                            <div className={styles.reviews__list__item__body}>
+                                <span className={styles.reviews__list__item__body__text}>{userReview.content}</span>
+                            </div>
                         </div>
-                        <div className={styles.reviews__list__item__header}>
-                            <h1 className={styles.reviews__list__item__header__title}>title</h1>
-                        </div>
-                        <div className={styles.reviews__list__item__body}>
-                            <span className={styles.reviews__list__item__body__text}></span>
-                        </div>
+                        <hr></hr>
+                        <br></br>
                     </div>
-                    <hr></hr>
-                    <br></br>
-                </div>
+                }
 
 
                 {(reviews.length > 0 || userReview) ?
@@ -187,7 +224,8 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                             </div>
                         </div>
                     ))
-                    : <p>There are no reviews for this movie yet.</p>}
+                    : <p>There are no reviews for this recipe yet.</p>
+                }
 
             </div>
         </div>)
