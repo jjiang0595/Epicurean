@@ -33,7 +33,7 @@ const Searchbar = (props) => {
 
     return (
         <form action="#" className={styles.search} onSubmit={submitHandler}>
-            <button className={styles.search__button} onMouseEnter={() => setShowSearch(true)}>
+            <button className={styles.search__button} onMouseEnter={() => setShowSearch(true)} onClick={() => setShowSearch(true)}>
                 <svg className={`${styles.search__icon} ${showSearch ? styles.rotated : ''}`}
                      onTransitionEnd={handleAnimationEnd}>
                     <use href={isRotated ? '/sprite.svg#icon-empty-glass' : '/sprite.svg#icon-full-glass'}></use>
@@ -42,7 +42,7 @@ const Searchbar = (props) => {
             {isRotated &&
                 <input type="text" ref={query}
                        className={`${styles.search__input} ${showResults ? styles.search__input__bottom : ''}`}
-                       placeholder="Search for a recipe..."/>
+                       placeholder="Search for a recipe..." />
 
             }
             {showResults ? <div className={styles.overlay} onClick={() => setShowResults(false)}/> : null}
