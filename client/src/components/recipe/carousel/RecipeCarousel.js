@@ -38,18 +38,12 @@ export default function RecipeCarousel(props) {
     return (
         <div className={styles.carousel}>
             <div className={styles.carousel__container}>
-                <div className={styles.carousel__container__item}>
+                <div className={styles.carousel__container__item} onClick={toggleRecipeVisibility}>
                     <img
                         className={`${styles.carousel__container__item__image}`}
                         src={recipe.image}
                         alt=""
                     />
-                    <button type="button" onClick={toggleRecipeVisibility}
-                            className={styles.carousel__container__item__infoButton}>
-                        <svg className={styles.carousel__container__item__infoButton__icon}>
-                            <use href="/sprite.svg#icon-spoon-knife"></use>
-                        </svg>
-                    </button>
                     <div className={styles.carousel__container__item__instructions} style={{
                         opacity: !showRecipe ? '1' : '0',
                         visibility: !showRecipe ? 'visible' : 'hidden',
@@ -57,14 +51,13 @@ export default function RecipeCarousel(props) {
                     }}>
                         {!showRecipe && <RecipeInstructions instr={recipe.instr} title={recipe.title}/>}
                     </div>
-
-                    <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton}
-                            disabled={active}>
-                        <svg className={styles.carousel__container__item__nextButton__icon}>
-                            <use href="/sprite.svg#icon-chevron-right"></use>
-                        </svg>
-                    </button>
                 </div>
+                <button type="button" onClick={nextRecipe} className={styles.carousel__container__item__nextButton}
+                        disabled={active}>
+                    <svg className={styles.carousel__container__item__nextButton__icon}>
+                        <use href="/sprite.svg#icon-chevron-right"></use>
+                    </svg>
+                </button>
             </div>
         </div>
     )

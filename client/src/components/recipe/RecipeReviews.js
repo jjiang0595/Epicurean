@@ -16,6 +16,7 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
     const [userReview, setUserReview] = useState(null);
 
     useEffect(() => {
+        console.log("RUNNING")
         const fetchReviews = async () => {
             if (recipeId) {
                 try {
@@ -41,23 +42,25 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
         fetchReviews();
     }, [recipeId, submit, user])
 
-    const resetForm = () => {
-        title.current.value = '';
-        review.current.value = '';
-        setStars(0);
-    }
-
     const starHandler = (e) => {
         setStars(e.target.value);
     }
 
     const fadeOut = () => {
         setFade(true);
+        setTimeout(() => {
+            setFade(false);
+        }, 1000);
     }
 
+    // WORK ON THE PROBLEM WHERE THE USER REVIEW IS DELETED BUT CANT ADD REVIEW
+
     const deleteHandler = async () => {
-        await api.delete(`/${recipeId}/${userReview.userId}`);
-        setUserReview(null);
+        await api.delete(`/recipe/${recipeId}/${userReview.userId}`)
+            .then(() => {
+                setReviews(reviews.filter(review => review.userId !== userReview.userId));
+                setUserReview(null);
+            })
     }
 
     const updateHandler = async () => {
@@ -65,12 +68,10 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
     }
 
     const submitHandler = async (e) => {
-        e.preventDefault();
         await submitReview('POST')
     }
 
     const submitReview = async (httpMethod) => {
-        console.log(httpMethod)
         try {
             await api({
                 method: httpMethod,
@@ -84,8 +85,7 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                 headers: {
                     'Content-Type': 'application/json',
                 }
-            });
-            setSubmit(true);
+            })
         } catch (error) {
             console.log(error);
         }
@@ -172,10 +172,10 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
 
             <div className={styles.reviews__list}>
                 <span className={styles.reviews__header}>User Reviews</span>
-                {(userReview && userReview.userId === user) &&
-                    <div key={userReview.userId}>
+                {(userReview) &&
+                    <div key={userReview.userId} className={`${fade && styles.reviews__list__item__fadeout}`}>
                         <span className={styles.reviews__list__title}>Your Review</span>
-                        <div className={`${styles.reviews__list__item} ${fade && styles.reviews__list__item__fadeout}`}>
+                        <div className={styles.reviews__list__item}>
                             <div className={styles.reviews__list__item__header__selfRating}>
                                 <div>
                                     <svg className={styles.reviews__star}>

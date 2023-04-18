@@ -7,18 +7,6 @@
     <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/recipe/RecipeReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/RecipeReviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/RecipeReviews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/RecipeReviews.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/AuthCodeMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/AuthCodeMap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/AuthForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/AuthForm.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/AuthForm.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/ErrorAlert.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/ErrorAlert.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/ErrorAlert.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/ErrorAlert.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/public/sprite.svg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/public/sprite.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/store/AuthContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/AuthContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/review.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/review.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/reviews.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +99,7 @@
       <workItem from="1681487861306" duration="28170000" />
       <workItem from="1681584020377" duration="23969000" />
       <workItem from="1681655194510" duration="653000" />
-      <workItem from="1681667589285" duration="22036000" />
+      <workItem from="1681667589285" duration="25177000" />
     </task>
     <servers />
   </component>

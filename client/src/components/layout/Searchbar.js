@@ -4,44 +4,10 @@ import {useRouter} from "next/router";
 
 const Searchbar = (props) => {
     const query = useRef("");
-    const [searchResults, setSearchResults] = useState([]);
     const [showResults, setShowResults] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
     const [isRotated, setIsRotated] = useState(false);
     const router = useRouter();
-
-    const searchHandler = async (event) => {
-        const query = event.target.value;
-        setTimeout(async () => {
-            if (query.length > 1) {
-                setShowResults(true)
-                await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data && data.meals) {
-                            const filteredRecipes = data.meals.filter((item, idx) => idx < 5).map(recipe => ({
-                                key: recipe.idMeal,
-                                title: recipe.strMeal,
-                                image: recipe.strMealThumb,
-                                instr: recipe.strInstructions
-                            }));
-                            setSearchResults(filteredRecipes);
-                        } else {
-                            setSearchResults([]);
-                        }
-                    })
-                    .catch(err => console.log(err))
-            } else {
-                setShowResults(false);
-                setSearchResults([]);
-            }
-        }, 500);
-    }
-
-    const deleteSearchTerm = () => {
-        setSearchResults([]);
-        setShowResults(false);
-    }
 
     const submitHandler = (event) => {
         if (query.current.value?.length > 2) {
@@ -74,7 +40,7 @@ const Searchbar = (props) => {
                 </svg>
             </button>
             {isRotated &&
-                <input type="text" ref={query} onChange={searchHandler}
+                <input type="text" ref={query}
                        className={`${styles.search__input} ${showResults ? styles.search__input__bottom : ''}`}
                        placeholder="Search for a recipe..."/>
 

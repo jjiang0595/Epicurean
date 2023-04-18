@@ -27,8 +27,7 @@ function RecipeItem(props) {
             onClick={handleClick}
         >
             <img className={styles.item__image} src={props.image} alt={props.title}/>
-            {showRecipe && (
-                <span className={styles.item__content}>{capitalizeString(props.title)}</span>)}
+                <span className={styles.item__content}>{capitalizeString(props.title)}</span>
         </div>
     )
 }
