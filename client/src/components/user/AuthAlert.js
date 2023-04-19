@@ -28,7 +28,7 @@ const AuthAlert = (props) => {
             } else {
                 setShowAlert(false);
             }
-        }, [authCtx.isLoggedIn, router.query.message]
+        }, [authCtx.user, router.query.message]
     )
 
     return (
