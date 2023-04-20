@@ -20,7 +20,7 @@ export default function MainNavigation() {
                     <svg className={styles.header__carousel__icon}>
                         <use href="/sprite.svg#icon-dice" className={styles.header__icon}></use>
                     </svg>
-                    <p>Random Recipe</p>
+                    <p className={styles.header__carousel__text}>Random Recipe</p>
                 </Link>
             </div>
             {!excludedRoutes && <Searchbar />}

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 5.5rem);
-  padding-bottom: 10rem;
+  padding-bottom: 13rem;
   user-select: none;
   position: relative;
 
@@ -22,6 +22,10 @@
     font-size: 11rem;
     font-family: "Poiret One", cursive;
     padding-bottom: 4rem;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 8rem;
+    }
   }
 
   &__button {
@@ -35,6 +39,11 @@
   &__icon {
     height: 3rem;
     width: 3rem;
+
+    @media only screen and (max-width: 1024px) {
+      height: 2rem;
+      width: 2rem;
+    }
   }
 
   &__input {
@@ -45,6 +54,18 @@
     border-radius: 2rem;
     width: 75rem;
     margin-right: -3.25rem;
+
+    @media only screen and (max-width: 1024px) {
+      width: 50rem;
+      padding: 1rem 3rem;
+
+    }
+
+    @media only screen and (max-width: 480px) {
+      width: 30rem;
+      padding: 1rem 3rem;
+    }
+
   }
 
 }

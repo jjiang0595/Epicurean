@@ -1,5 +1,5 @@
 import styles from './Searchbar.module.scss';
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useRouter} from "next/router";
 
 const Searchbar = (props) => {
@@ -8,6 +8,13 @@ const Searchbar = (props) => {
     const [showSearch, setShowSearch] = useState(false);
     const [isRotated, setIsRotated] = useState(false);
     const router = useRouter();
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+return () => {
+    setShowSearch(true)
+}
+    })
 
     const submitHandler = (event) => {
         if (query.current.value?.length > 2) {
