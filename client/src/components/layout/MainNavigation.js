@@ -1,12 +1,28 @@
 import styles from './MainNavigation.module.scss';
 import Link from "next/link";
 import Searchbar from "./Searchbar";
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {AuthContext} from "../../store/AuthContext";
 import {useRouter} from "next/router";
 
 export default function MainNavigation() {
     const {user, handleLogout} = useContext(AuthContext);
+    const [windowSize, setWindowSize] = useState([
+        0,
+        0,
+    ]);
+
+    useEffect(() => {
+        const handleWindowResize = () => {
+            setWindowSize([window.innerWidth, window.innerHeight]);
+        };
+
+        window.addEventListener('resize', handleWindowResize);
+        console.log(windowSize);
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
 
     const router = useRouter();
 

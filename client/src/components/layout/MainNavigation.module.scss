@@ -1,7 +1,6 @@
 .header {
   font-size: 1.4rem;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1.5px black solid;
@@ -12,11 +11,6 @@
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none;
-
-  @media only screen and (max-width: 966px) {
-    height: 12rem;
-    order: 2;
-  }
 
   &__container {
     display: flex;
@@ -35,8 +29,9 @@
     border: none;
     background: none;
 
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 660px) {
       margin-left: 2rem;
+      font-size: 2rem;
     }
   }
 
@@ -52,7 +47,7 @@
     transition: color .2s ease-in-out;
 
     @media only screen and (max-width: 520px) {
-      margin-left: 2rem;
+      margin-left: 1rem;
     }
 
     &:hover {
@@ -83,4 +78,8 @@
   background: none;
   color: black;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 1200px) {
+    margin-right: 2rem;
+  }
 }

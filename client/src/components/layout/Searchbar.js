@@ -4,22 +4,24 @@ import {useRouter} from "next/router";
 
 const Searchbar = (props) => {
     const query = useRef("");
-    const [showResults, setShowResults] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
-    const [isRotated, setIsRotated] = useState(false);
+    const [showSearch, setShowSearch] = useState(true);
     const router = useRouter();
 
     useEffect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-return () => {
-    setShowSearch(true)
-}
-    })
+        const mediaQuery = window.matchMedia('(max-width: 1000px)');
+        const handleMediaQueryChange = (e) => {
+            if (e.matches) {
+                setShowSearch(false);
+            } else {
+                setShowSearch(true);
+            }
+        }
+        mediaQuery.addEventListener('change', handleMediaQueryChange);
+    }, [])
 
     const submitHandler = (event) => {
         if (query.current.value?.length > 2) {
             event.preventDefault();
-            setShowResults(false);
 
             router.push({
                 pathname: '/search',
@@ -33,26 +35,19 @@ return () => {
         }
     }
 
-    const handleAnimationEnd = () => {
-        setIsRotated(true);
-    };
-
-
     return (
         <form action="#" className={styles.search} onSubmit={submitHandler}>
-            <button className={styles.search__button} onMouseEnter={() => setShowSearch(true)} onClick={() => setShowSearch(true)}>
-                <svg className={`${styles.search__icon} ${showSearch ? styles.rotated : ''}`}
-                     onTransitionEnd={handleAnimationEnd}>
-                    <use href={isRotated ? '/sprite.svg#icon-empty-glass' : '/sprite.svg#icon-full-glass'}></use>
+            <button className={styles.search__button} onClick={() => setShowSearch((state) => !state)} type="button">
+                <svg className={`${styles.search__icon} ${showSearch ? styles.rotated : styles.original}`}>
+                    <use href={showSearch ? '/sprite.svg#icon-empty-glass' : '/sprite.svg#icon-full-glass'}></use>
                 </svg>
             </button>
-            {isRotated &&
+            {showSearch &&
                 <input type="text" ref={query}
-                       className={`${styles.search__input} ${showResults ? styles.search__input__bottom : ''}`}
+                       className={styles.search__input}
                        placeholder="Search for a recipe..." />
-
             }
-            {showResults ? <div className={styles.overlay} onClick={() => setShowResults(false)}/> : null}
+            {showSearch ? <div className={styles.overlay} onClick={() => setShowSearch(false)}/> : null}
         </form>
     )
 }
