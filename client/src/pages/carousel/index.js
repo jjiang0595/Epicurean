@@ -1,5 +1,10 @@
 import RecipeCarousel from "../../components/recipe/carousel/RecipeCarousel";
+import {useEffect} from "react";
 export default function Home(props) {
+    useEffect(() => {
+        document.title = 'Carousel | Epicurean'
+    })
+
     return <RecipeCarousel recipes={props.recipes[0]} />
 }
 

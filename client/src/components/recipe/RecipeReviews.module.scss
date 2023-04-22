@@ -2,19 +2,23 @@
   padding-top: 5rem;
   padding-left: 20rem;
   padding-right: 20rem;
-  display: grid;
-  grid-template-columns: .5fr 1fr;
-  grid-gap: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: rgb(233, 233, 233);
 
   margin-bottom: 10rem;
 
-  @media only screen and (max-width: 1000px) {
-    display: flex;
-    flex-direction: column;
+  @media only screen and (max-width: 1310px) {
     padding-left: 5rem;
     padding-right: 5rem;
   }
+
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
+
 
   &__header {
     display: flex;
@@ -138,6 +142,11 @@
       border-radius: 1rem;
       background-color: #f4f2f2;
 
+      @media only screen and (max-width: 1000px) {
+        padding: 1rem;
+        width: 80vw;
+      }
+
       &__fadeout {
         animation: fadeout .5s forwards;
       }
@@ -166,7 +175,7 @@
           margin-bottom: 1rem;
 
           &__text {
-            padding-top: .1rem;
+            padding-top: .5rem;
           }
         }
 
@@ -177,7 +186,7 @@
       }
 
       &__body {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         color: #000000;
 
         &__text {
@@ -192,6 +201,8 @@
   &__form {
     display: flex;
     flex-direction: column;
+    margin-right: 10rem;
+    margin-bottom: 10rem;
 
     &__header {
       display: flex;
@@ -233,14 +244,17 @@
         font-size: 1.6rem;
         max-height: 20rem;
         min-height: 3rem;
-        max-width: 100%;
-        min-width: 100%;
+        min-width: 40rem;
         resize: none;
+
+        @media only screen and (max-width: 1000px) {
+          width: 90vw;
+        }
       }
     }
 
     &__button {
-      width: 100%;
+      width: 40rem;
       margin-top: 1rem;
       padding: 1rem;
       border-radius: 1rem;
@@ -249,7 +263,11 @@
       cursor: pointer;
       background-color: #1c1c1c;
       color: white;
-        transition: all .2s;
+      transition: all .2s;
+
+      @media only screen and (max-width: 1000px) {
+        width: 90vw;
+      }
 
       &:hover {
         background-color: #625d5d;

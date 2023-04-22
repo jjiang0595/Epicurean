@@ -1,10 +1,15 @@
 import MovieList from "../../components/recipe/search/RecipeList";
 import {useRouter} from "next/router";
 import RecipeList from "../../components/recipe/search/RecipeList";
+import {useEffect} from "react";
 
 const SearchResults = (props) => {
     const router = useRouter();
     const query = router.query;
+
+    useEffect(() => {
+      document.title = 'Search | Epicurean'
+    })
 
     return <RecipeList recipes={props.recipes} />
 }

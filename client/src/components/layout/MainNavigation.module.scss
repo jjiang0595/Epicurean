@@ -55,6 +55,22 @@
       color: black;
     }
 
+    @media only screen and (max-width: 1200px) {
+      &:hover::before {
+        content: "Random Recipe";
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 15%;
+        background-color: #fff;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+    }
+
+
     &__icon {
       height: 2rem;
       width: 2rem;
