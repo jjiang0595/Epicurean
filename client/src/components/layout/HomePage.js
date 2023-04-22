@@ -28,8 +28,7 @@ const HomePage = () => {
     return (
         <>
             <div className={styles.container}>
-                           <AuthAlert />
-
+                <AuthAlert />
                 <h1 className={styles.search__header}>Epicurean</h1>
                 <form action="#" className={styles.search} onSubmit={submitHandler}>
                     <button className={styles.search__button}>
