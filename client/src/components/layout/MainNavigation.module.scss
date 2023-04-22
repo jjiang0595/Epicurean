@@ -6,6 +6,7 @@
   border-bottom: 1.5px black solid;
   height: 5rem;
   font-family: 'Noto Serif';
+  position: relative;
   background-color: rgb(233, 233, 233);
 
   -webkit-user-select: none; /* Safari */
@@ -68,6 +69,7 @@
     }
   }
 }
+
 .header__auth {
   display: flex;
   margin-right: 6rem;

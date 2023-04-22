@@ -11,14 +11,12 @@ export default function MainNavigation() {
         0,
         0,
     ]);
-
     useEffect(() => {
         const handleWindowResize = () => {
             setWindowSize([window.innerWidth, window.innerHeight]);
         };
 
         window.addEventListener('resize', handleWindowResize);
-        console.log(windowSize);
         return () => {
             window.removeEventListener('resize', handleWindowResize);
         };

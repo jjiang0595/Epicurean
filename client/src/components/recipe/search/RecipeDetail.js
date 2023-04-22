@@ -1,6 +1,7 @@
 import styles from './RecipeDetail.module.scss';
 import {useEffect, useRef, useState} from "react";
 import RecipeReviews from "../RecipeReviews";
+import {capitalizeString} from "../../../utils/capitalizeString";
 
 function RecipeDetail(props) {
     const [recipe, setRecipe] = useState({strMeal: "Recipe", strMealThumb: "", strInstructions: ""})
@@ -51,11 +52,9 @@ function RecipeDetail(props) {
     return (
         <>
             <div className={styles.recipe}>
+                <img className={styles.recipe__image} src={recipe.strMealThumb} alt={recipe.strMeal}/>
                 <div>
-                    <img className={styles.recipe__image} src={recipe.strMealThumb} alt={recipe.strMeal}/>
-                </div>
-                <div>
-                    <div className={styles.recipe__title}>{recipe.strMeal}</div>
+                    <div className={styles.recipe__title}>{capitalizeString(recipe.strMeal)}</div>
                     <ul className={styles.recipe__ingredients}>
                         {recipe.ingredients && recipe.ingredients.map((ingredient, index) => (
                             <li className={styles.recipe__ingredients__item}
@@ -73,7 +72,7 @@ function RecipeDetail(props) {
                 </div>
                 <div className={styles.separator}></div>
             </div>
-                <RecipeReviews gridColumn="1 / -1" recipeId={recipe.idMeal}/>
+            <RecipeReviews gridColumn="1 / -1" recipeId={recipe.idMeal}/>
         </>
     );
 }

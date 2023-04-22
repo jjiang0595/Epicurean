@@ -21,7 +21,7 @@ const AuthAlert = () => {
     return (
         <>
             {showAlert &&
-                <div className={`${styles.alert}`} >
+                <div className={styles.alert} >
                     <svg className={styles.alert__icon}>
                         <use href="/sprite.svg#icon-cancel"></use>
                     </svg>

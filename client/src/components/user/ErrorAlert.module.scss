@@ -1,16 +1,13 @@
 .alert {
-  position: absolute;
   height: 6rem;
-  top: 15%;
   color: black;
   padding: 0 2rem;
-  margin-bottom: 4rem;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-radius: .5rem;
-  width: 50rem;
+  width: 100%;
   background-color: #f8d7da;
 
   &__icon {

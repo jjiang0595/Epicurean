@@ -31,6 +31,8 @@ export const AuthProvider = ({children}) => {
 
         const handleAuth = async (authType, email, password) => {
             if (!email) {
+                console.warn = () => {
+                };
                 router.push({
                     pathname: '/login',
                     query: {
@@ -40,6 +42,8 @@ export const AuthProvider = ({children}) => {
                 return;
             }
             if (!password) {
+                console.warn = () => {
+                };
                 router.push({
                     pathname: '/login',
                     query: {
@@ -84,8 +88,6 @@ export const AuthProvider = ({children}) => {
                         }, '/login');
                     })
             }
-            console.warn = () => {
-            };
 
             router.push({
                 pathname: '/',

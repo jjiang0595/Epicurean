@@ -93,8 +93,8 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
 
 
     return (
-        <div className={styles.reviews} style={{gridColumn}}>
-            <div className={styles.reviews__form}>
+         <div className={styles.reviews} style={{gridColumn}}>
+             {user && <div className={styles.reviews__form}>
                 <span
                     className={styles.reviews__form__header}>{!userReview ? "Add Your Review" : "Update Your Review"}</span>
                 <form onSubmit={!userReview ? submitHandler : updateHandler}>
@@ -165,9 +165,9 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                         <textarea ref={review} className={styles.reviews__form__group__input} id="review" rows="5"
                                   required/>
                     </div>
-                    <button className={styles.reviews__form__button}>Submit</button>
+                    <button className={styles.reviews__form__button}>{!userReview ? 'Submit' : 'Update'}</button>
                 </form>
-            </div>
+            </div>}
 
 
             <div className={styles.reviews__list}>

@@ -4,7 +4,7 @@ import {useRouter} from "next/router";
 
 const Searchbar = (props) => {
     const query = useRef("");
-    const [showSearch, setShowSearch] = useState(true);
+    const [showSearch, setShowSearch] = useState(false);
     const router = useRouter();
 
     useEffect(() => {
@@ -16,11 +16,13 @@ const Searchbar = (props) => {
                 setShowSearch(true);
             }
         }
+
+        handleMediaQueryChange(mediaQuery);
         mediaQuery.addEventListener('change', handleMediaQueryChange);
     }, [])
 
     const submitHandler = (event) => {
-        if (query.current.value?.length > 2) {
+        if (query.current.value?.length > 1) {
             event.preventDefault();
 
             router.push({
@@ -43,11 +45,10 @@ const Searchbar = (props) => {
                 </svg>
             </button>
             {showSearch &&
-                <input type="text" ref={query}
+                <input type="search" ref={query}
                        className={styles.search__input}
                        placeholder="Search for a recipe..." />
             }
-            {showSearch ? <div className={styles.overlay} onClick={() => setShowSearch(false)}/> : null}
         </form>
     )
 }
