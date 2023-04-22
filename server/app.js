@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const helmet = require('helmet');
 require('dotenv').config();
 
 const app = express();
@@ -16,6 +17,7 @@ mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@epicurean.sa
         console.error('Failed to connect to MongoDB', err);
     });
 
+app.use(helmet());
 app.use(express.json()); // Parse JSON request body
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
