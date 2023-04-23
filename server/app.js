@@ -23,7 +23,7 @@ app.use(helmet());
 app.use(express.json()); // Parse JSON request body
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'https://epicurean-backend.vercel.app/api',
+    origin: 'https://epicurean.vercel.app',
 }));
 app.use((req, res, next) => {
     res.locals.user = req.user;
