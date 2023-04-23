@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "./app.js",
+      "src": "app.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
-    { "src": "/recipe", "dest": "app.js" }
+    {
+      "src": "/recipe",
+      "dest": "app.js"
+    }
   ],
+  "env": {
+    "MONGODB_USER": "your_mongodb_username",
+    "MONGODB_PASSWORD": "your_mongodb_password"
+  },
+  "type": "backend"
 }
