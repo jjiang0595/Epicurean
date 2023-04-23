@@ -83,7 +83,7 @@ const AuthForm = (props) => {
                 </form>
             </div>
             {showImage && <div className={styles.background}>
-                <img className={styles.background__img} src="/food.jpg" alt="breakfast background"/>
+                <img className={styles.background__img} src="/food.jpg" alt="breakfast background" preload="true"/>
             </div>}
         </div>
     )
