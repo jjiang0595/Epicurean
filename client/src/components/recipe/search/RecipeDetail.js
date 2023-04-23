@@ -24,7 +24,6 @@ function RecipeDetail(props) {
                         const measures = [];
                         Object.keys(data.meals[0]).forEach(key => {
                             if (key.includes("strIngredient") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
-                                console.log(data.meals[0][key])
                                 ingredients.push(data.meals[0][key]);
                             }
                             if (key.includes("strMeasure") && data.meals[0][key] !== "" && data.meals[0][key] !== null) {
