@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="" />
+    <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeList.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeList.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
