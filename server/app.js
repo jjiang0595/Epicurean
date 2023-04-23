@@ -12,6 +12,8 @@ const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD;
 mongoose.connect(`mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@epicurean.sauhvxv.mongodb.net/epicurean`, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to MongoDB');
+        console.log('MONGODB_USER', MONGODB_USER);
+        console.log('MONGODB_PASSWORD', MONGODB_PASSWORD);
     })
     .catch(err => {
         console.error('Failed to connect to MongoDB', err);
