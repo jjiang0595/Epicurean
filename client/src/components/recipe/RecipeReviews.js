@@ -16,7 +16,6 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
     const [userReview, setUserReview] = useState(null);
 
     useEffect(() => {
-        console.log("RUNNING")
         const fetchReviews = async () => {
             if (recipeId) {
                 try {
@@ -50,8 +49,6 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
             setFade(false);
         }, 1000);
     }
-
-    // WORK ON THE PROBLEM WHERE THE USER REVIEW IS DELETED BUT CANT ADD REVIEW
 
     const deleteHandler = async () => {
         await api.delete(`/recipe/${recipeId}/${userReview.userId}`)
@@ -92,7 +89,8 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
 
     return (
          <div className={styles.reviews} style={{gridColumn}}>
-             {user && <div className={styles.reviews__form}>
+             {user &&
+                 <div className={styles.reviews__form}>
                 <span
                     className={styles.reviews__form__header}>{!userReview ? "Add Your Review" : "Update Your Review"}</span>
                 <form onSubmit={!userReview ? submitHandler : updateHandler}>
@@ -165,7 +163,8 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                     </div>
                     <button className={styles.reviews__form__button}>{!userReview ? 'Submit' : 'Update'}</button>
                 </form>
-            </div>}
+            </div>
+         }
 
 
             <div className={styles.reviews__list}>

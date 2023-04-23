@@ -45,7 +45,7 @@ function RecipeDetail(props) {
     }, [recipeId]);
 
     useEffect(() => {
-        document.title = `${recipe.strMeal} - Epicurean`;
+        document.title = capitalizeString(`${recipe.strMeal} - Epicurean`);
     }, [recipe]);
 
     return (
