@@ -11,9 +11,5 @@
       "src": "/api/recipe/(.*)",
       "dest": "app.js"
     }
-  ],
-  "env": {
-    "MONGODB_USER": "${env.MONGODB_USER}",
-    "MONGODB_PASSWORD": "${env.MONGODB_PASSWORD}"
-  }
+  ]
 }
