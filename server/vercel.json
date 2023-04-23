@@ -16,5 +16,4 @@
     "MONGODB_USER": "your_mongodb_username",
     "MONGODB_PASSWORD": "your_mongodb_password"
   },
-  "type": "backend"
 }
