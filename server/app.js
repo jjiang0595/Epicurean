@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 // Define routes
 const reviewsRoutes = require('./routes/reviews');
-app.use('/recipe', reviewsRoutes);
+app.use('/api/recipe', reviewsRoutes);
 
 // Start server
 const port = process.env.PORT || 5000;
