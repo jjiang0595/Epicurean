@@ -24,7 +24,6 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
 
                     const reviewsList = [];
                     for (let review of response.data.reviews) {
-                        console.log("user id" + review.userId, user)
                         if (review.userId === user) {
                             setUserReview(review);
                         } else {
@@ -32,7 +31,6 @@ const RecipeReviews = ({recipeId, gridColumn}) => {
                         }
                     }
                     setReviews(reviewsList);
-
                     setSubmit(false);
                 } catch (error) {
                     console.log(error);
