@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/user/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/user/AuthForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/public/breakfast_background.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,8 @@
       <workItem from="1682016874683" duration="19750000" />
       <workItem from="1682092137794" duration="25772000" />
       <workItem from="1682187935071" duration="7690000" />
-      <workItem from="1682291083666" duration="667000" />
+      <workItem from="1682291083666" duration="1060000" />
+      <workItem from="1682298843953" duration="422000" />
     </task>
     <servers />
   </component>
