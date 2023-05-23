@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="" />
+    <list default="true" id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.module.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684794792777</updated>
       <workItem from="1684794794671" duration="1403000" />
-      <workItem from="1684796227878" duration="7399000" />
+      <workItem from="1684796227878" duration="7722000" />
     </task>
     <servers />
   </component>
