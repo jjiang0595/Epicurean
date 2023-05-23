@@ -4,20 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="">
+    <list default="true" id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FoodGourmet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FoodGourmet.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeInstructions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeInstructions.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/carousel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/carousel/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/recipes/[recipeId]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/recipes/[recipeId]/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,89 +26,36 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2N7mC6M2sBDAGlS4iK7W7ETXFmu" />
+  <component name="ProjectId" id="2QASFseqsvo4Sxx2mc6RM81OKGX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jerry/WebstormProjects/FoodGourmet/server/bin&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\server\bin" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src\public" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src\components\user" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\server" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\server\bin" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src\components\layout" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src\components\user" />
-      <recent name="C:\Users\jerry\WebstormProjects\FoodGourmet\client\src\public" />
-    </key>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42794258-921d-4e6b-a027-5092ba4c8ff0" name="Changes" comment="" />
-      <created>1679023363186</created>
+      <changelist id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="" />
+      <created>1684794792777</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679023363186</updated>
-      <workItem from="1679023364164" duration="446000" />
-      <workItem from="1679023913640" duration="680000" />
-      <workItem from="1679059614077" duration="20847000" />
-      <workItem from="1679149015808" duration="12672000" />
-      <workItem from="1679245999281" duration="9711000" />
-      <workItem from="1679315773433" duration="10397000" />
-      <workItem from="1679611186078" duration="7272000" />
-      <workItem from="1679685164901" duration="4088000" />
-      <workItem from="1679757008729" duration="25000" />
-      <workItem from="1679792875754" duration="647000" />
-      <workItem from="1680315584158" duration="593000" />
-      <workItem from="1680371919133" duration="97000" />
-      <workItem from="1680372067783" duration="20562000" />
-      <workItem from="1680457340822" duration="18797000" />
-      <workItem from="1680494726003" duration="5000" />
-      <workItem from="1680660027025" duration="5844000" />
-      <workItem from="1680721801508" duration="18981000" />
-      <workItem from="1681006937095" duration="5182000" />
-      <workItem from="1681059177290" duration="16033000" />
-      <workItem from="1681147093309" duration="17123000" />
-      <workItem from="1681234234257" duration="17299000" />
-      <workItem from="1681265117654" duration="4033000" />
-      <workItem from="1681314765794" duration="22421000" />
-      <workItem from="1681402436923" duration="25053000" />
-      <workItem from="1681485653473" duration="1128000" />
-      <workItem from="1681487861306" duration="28170000" />
-      <workItem from="1681584020377" duration="23969000" />
-      <workItem from="1681655194510" duration="653000" />
-      <workItem from="1681667589285" duration="25177000" />
-      <workItem from="1681747670694" duration="20464000" />
-      <workItem from="1681874727847" duration="572000" />
-      <workItem from="1681955693225" duration="7197000" />
-      <workItem from="1682016874683" duration="19750000" />
-      <workItem from="1682092137794" duration="25772000" />
-      <workItem from="1682187935071" duration="7690000" />
-      <workItem from="1682291083666" duration="1060000" />
-      <workItem from="1682298843953" duration="422000" />
+      <updated>1684794792777</updated>
+      <workItem from="1684794794671" duration="1403000" />
+      <workItem from="1684796227878" duration="7077000" />
     </task>
     <servers />
   </component>

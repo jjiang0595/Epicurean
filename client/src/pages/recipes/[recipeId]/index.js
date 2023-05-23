@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import RecipeDetail from "../../../components/recipe/search/RecipeDetail";
 import {useRouter} from "next/router";
 

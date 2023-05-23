@@ -15,7 +15,7 @@ export async function getStaticProps(props) {
     return {
         props: {
             recipes: data.meals.map(meal => ({
-                id: meal.idMeal,
+                recipeId: meal.idMeal,
                 title: meal.strMeal,
                 image: meal.strMealThumb,
                 instr: meal.strInstructions
