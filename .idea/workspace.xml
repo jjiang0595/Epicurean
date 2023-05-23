@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FoodGourmet.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FoodGourmet.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeCarousel.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeInstructions.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/carousel/RecipeInstructions.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/recipe/search/RecipeItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/carousel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/carousel/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/recipes/[recipeId]/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/recipes/[recipeId]/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="74557f24-6e49-46da-b7ae-ae9059b5c61e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +45,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684794792777</updated>
       <workItem from="1684794794671" duration="1403000" />
-      <workItem from="1684796227878" duration="7077000" />
+      <workItem from="1684796227878" duration="7399000" />
     </task>
     <servers />
   </component>
